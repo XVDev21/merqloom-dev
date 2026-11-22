@@ -1,4 +1,5 @@
 import type { MedusaContainer } from "@medusajs/framework"
+import type { ProductOptionDTO } from "@medusajs/framework/types"
 import { ContainerRegistrationKeys, MedusaError, Modules } from "@medusajs/framework/utils"
 import {
   createCollectionsWorkflow,
@@ -25,7 +26,8 @@ export default async function upgradeCatalog({ container }: { container: MedusaC
   })
   const tray = products.find(product => product.handle === "desk-tray")
   const pouch = products.find(product => product.handle === "organizer-pouch")
-  const finish = tray?.options?.find(option => option?.title === "Finish")
+  const options: Array<Pick<ProductOptionDTO, "id" | "title"> | null> = tray?.options ?? []
+  const finish = options.find(option => option?.title === "Finish")
   if (!tray || !pouch || !finish) {
     throw new MedusaError(MedusaError.Types.INVALID_DATA, "MQ-102 requires the seeded tray, pouch, and tray Finish option.")
   }
