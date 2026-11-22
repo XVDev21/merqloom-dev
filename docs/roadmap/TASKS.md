@@ -1,6 +1,6 @@
 # Task ledger
 
-Updated 2026-11-22, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
+Updated 2026-11-23, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
 
 ## MQ-001: Environment/upstream/repository preflight
 
@@ -36,47 +36,47 @@ Owner: Sol. Reviewer: Astra. Dependencies: MQ-101 accepted. Gate: M1. Status: AC
 
 ## MQ-103: Cart and simulated checkout
 
-Owner: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-104: Direct inventory and manual fulfillment
 
-Owner: Sol. Dependencies: MQ-103. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-103. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-105: Direct-flow gate review
 
-Owner: Astra. Dependencies: MQ-101 through MQ-104. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: MQ-101 through MQ-104. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-201: Supplier schema and adapter
 
-Owner: Astra design; Sol implements. Dependencies: M1 accepted. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Architecture: Sol. Implementation: Terra. Dependencies: M1 accepted. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-202: Idempotent CSV import/mapping/freshness
 
-Owner: Sol. Dependencies: MQ-201. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-201. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-203: Durable mock fulfillment/retries
 
-Owner: Sol. Dependencies: MQ-202. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-202. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-204: Authorized supplier Admin extension
 
-Owner: Sol. Dependencies: MQ-203. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-203. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-205: Supplier E2E and direct regression gate
 
-Owner: Astra. Dependencies: MQ-201 through MQ-204. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: MQ-201 through MQ-204. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-301: Accessibility/security/regression/CI
 
-Owner: Sol; Astra reviews. Dependencies: M2 accepted. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Reviewer: Sol. Dependencies: M2 accepted. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-302: Repeatable demo and portfolio evidence
 
-Owner: Sol; Astra reviews. Dependencies: MQ-301. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-301. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-303: Final MVP acceptance
 
-Owner: Astra. Dependencies: MQ-302. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: MQ-302. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## Daily schedule
 
@@ -103,7 +103,7 @@ MQ-002 requires approved requirements and decisions plus publication/review; loc
 MQ-003/004 require actual generated dependency tree, isolated service boot and deterministic catalog.
 MQ-005 requires local/remote SHA equality, real CI and runnable handoff.
 MQ-006 requires applied tokens, contrast, responsive and motion evidence; policy alone is partial.
-M1/M2/M3 criteria are in PRD and the M1 packet; later task packets must bind exact test commands and accepted SHA before starting.
+M1/M2/M3 criteria are in the PRD. Start each task from the published Sol-approved handoff and verified default-branch tip. Each handoff specifies the accepted baseline and verification commands.
 
 Statuses: PLANNED, READY, IN_PROGRESS, BLOCKED, IN_REVIEW, ACCEPTED, DEFERRED.
 Git states: NOT_COMMITTED, LOCAL_ONLY, PUSH_PENDING, PUSHED. A rejected Git init is NOT_COMMITTED, not PUSH_PENDING.
