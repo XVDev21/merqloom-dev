@@ -2,7 +2,7 @@
 
 November 22, Manila. Day 1 preflight and architecture complete. Day 2 official scaffold, two app packages, synthetic PHP catalog, isolated infrastructure and design tokens implemented. Day 3 checks and publication are recorded in docs/verification. Astra owns M0 acceptance and the first Sol handoff.
 
-November 26–29 · Sol implements Studio, product discovery, cart, simulated checkout and manual direct fulfillment. Astra reviews M1.
+November 26–29 · Studio and product discovery are accepted. Terra implements the remaining cart, simulated checkout and manual direct fulfillment tasks as Sol releases them. Sol reviews M1.
 November 30–December 3 · Supplier import, reconciliation, retry-safe processing and Admin extension culminate in the M2 two-order regression.
 December 4–7 · Accessibility, security, reproducibility, release candidate demonstration and final evidence-based M3 decision.
 
@@ -25,3 +25,9 @@ Astra accepted MQ-101 and merged [PR #1](https://github.com/XVDev21/merqloom-dev
 November 22, Manila. Sol implemented native catalog search and collection filtering, shareable product and finish URLs, Philippine demo pricing and stock, and recoverable Store states. The additive fixture upgrade added one collection and one tray finish. Clean and upgraded disposable databases were verified. Checkout remains the MQ-103 gate. [Day 5 report](../verification/DAY_05_2026-11-27.md)
 
 Astra completed review and verified the finish-image correction at dfc3144c7d139e103e479ca207d9507ffe9cb594. Acceptance takes effect when [PR #3](https://github.com/XVDev21/merqloom-dev/pull/3) merges after successful hosted checks. The next task is MQ-103, cart and simulated checkout. M1 remains open until the direct order and manual fulfillment pass review.
+
+## Sol and Terra governance · November 23
+
+Astra closed MQ-102 through [PR #3](https://github.com/XVDev21/merqloom-dev/pull/3), which merged at `89e7d3bac18b5d9598d5e49cd72e8412f3738bc6` and passed [Foundation on main](https://github.com/XVDev21/merqloom-dev/actions/runs/45040090750). Sol takes over architecture, task release, review, acceptance and authorized merges. Terra takes over implementation on released task branches. Astra's recorded decisions and the accepted implementation evidence remain the basis for future work.
+
+MQ-103 is the next implementation task. Sol releases it with its checkout and verification contract on main. MQ-104 and the MQ-105 M1 gate follow MQ-103 acceptance.

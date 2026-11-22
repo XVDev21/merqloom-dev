@@ -1,6 +1,6 @@
 # Product requirements
 
-Decision date: 2026-11-22. Owner: Astra. Architecture approved in principle; implementation and milestone acceptance pending.
+Astra recorded the original requirements decision on November 22, 2026. Sol now owns the PRD and milestone acceptance. See the [progress record](../roadmap/PROGRESS.md) for accepted work and pending gates.
 
 ## Audience and decision
 
