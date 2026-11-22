@@ -9,3 +9,5 @@ Sol created three original raster illustrations for Merqloom on November 22, 202
 | [pouch-natural.webp](../../apps/storefront/public/catalog/pouch-natural.webp) | MQ-SUPPLIER-POUCH | Illustration of a natural canvas organizer pouch with a zip closure |
 
 The variant SKU selects the matching authored tray finish. Native product and variant records supply the displayed specifications, price and stock.
+
+Astra approved the MQ-102 image-count and motion exceptions for the two-product catalog. Catalog cards use the representative product illustration. A product detail page uses only a known variant’s illustration and reserves the same space for a neutral placeholder when no matching asset exists.
