@@ -32,11 +32,11 @@ Owner: Sol. Reviewer: Astra. Gate: M1. Status: ACCEPTED. Git: PUSHED and merged.
 
 ## MQ-102: Catalog/PDP/variants/search
 
-Owner: Sol. Dependencies: MQ-101 accepted. Gate: M1. Status: READY. [Sol packet](../handoffs/SOL_MQ-102_CATALOG.md). Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Reviewer: Astra. Dependencies: MQ-101 accepted. Gate: M1. Status: ACCEPTED on merge of [PR #3](https://github.com/XVDev21/merqloom-dev/pull/3). Git: PUSHED. Reviewed implementation: dfc3144c7d139e103e479ca207d9507ffe9cb594. [Day 5 evidence](../verification/DAY_05_2026-11-27.md).
 
 ## MQ-103: Cart and simulated checkout
 
-Owner: Sol. Dependencies: MQ-102. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-104: Direct inventory and manual fulfillment
 
