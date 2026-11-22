@@ -48,6 +48,7 @@ test("native Philippine prices and channel inventory follow each selected varian
   for (const id of ["variant_missing", variants["MQ-SUPPLIER-POUCH"].id]) {
     const invalid = await catalogHtml(`/store/desk-tray?variant=${id}`)
     assert.match(invalid, /This finish is unavailable/)
+    assert.doesNotMatch(invalid, /<img\b[^>]*alt="Illustration of a [^"]*desk tray/i)
     assert.doesNotMatch(invalid, /PHP\s(?:450|520)\.00/)
   }
   const pouch = await catalogHtml("/store/organizer-pouch")

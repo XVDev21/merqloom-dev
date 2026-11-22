@@ -5,11 +5,20 @@ const trayNatural = { file: "tray-natural", alt: "Illustration of a pale birch d
 const trayWalnut = { file: "tray-walnut", alt: "Illustration of a dark Walnut-finish desk tray with a shallow raised rim" }
 const pouch = { file: "pouch-natural", alt: "Illustration of a natural canvas organizer pouch with a zip closure" }
 
+const catalogMedia = new Map([
+  ["desk-tray", trayNatural],
+  ["organizer-pouch", pouch],
+])
+const variantMedia = new Map([
+  ["MQ-DIRECT-TRAY", trayNatural],
+  ["MQ-DIRECT-TRAY-WALNUT", trayWalnut],
+  ["MQ-SUPPLIER-POUCH", pouch],
+])
+
 export default function ProductImage({ handle, sku, detail = false }: {
   handle: string; sku?: string | null; detail?: boolean
 }) {
-  const media = handle === "desk-tray" ? (sku === "MQ-DIRECT-TRAY-WALNUT" ? trayWalnut : trayNatural)
-    : handle === "organizer-pouch" ? pouch : null
+  const media = detail ? variantMedia.get(sku ?? "") : catalogMedia.get(handle)
   if (!media) return <div className={styles.imagePlaceholder}>No product illustration</div>
 
   return <Image
