@@ -42,3 +42,7 @@ November 22, 2026, Manila. Audience assumption from the PRD: independent merchan
 | Architecture · “Next.js serves the public site, and Medusa owns commerce records.” | MQ-CL-010. Verified by ADR-001, source, and the running app. Additional suppliers and other extensions are possibilities. |
 | Roadmap and final CTA · “The target for the MVP demonstration is December 7, 2026.” “Explore the roadmap” | MQ-CL-009/012. PRD schedule is a target. The roadmap gives each stage a status and concrete gate. Walkthrough request availability is pending. |
 | FAQs and footer · “Commercial pricing is undecided.” “Demo products, suppliers, orders, payments, and shipments are fictional.” | MQ-CL-002/005/009/012. Project boundaries from the PRD. Production providers would require separate approval and validation. |
+
+## Astra decision · November 22
+
+Astra approved the MQ-101 copy at 5d411c3. Current claims are supported by the live catalog and M0 Admin evidence. Checkout and supplier handling are explicitly planned. The catalog CTA and roadmap destination both worked during review.

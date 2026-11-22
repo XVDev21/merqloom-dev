@@ -28,11 +28,11 @@ Owner: Astra. Dependencies: MQ-002, MQ-003. Gate: M0. Status: ACCEPTED. Git: PUS
 
 ## MQ-101: Studio and working CTAs
 
-Owner: Sol. Dependencies: M0 accepted. Gate: M1. Status: IN_REVIEW (Astra). Git: PUSHED. Branch: `feat/MQ-101-studio`. The [branch history](https://github.com/XVDev21/merqloom-dev/commits/feat/MQ-101-studio) and [review record](https://github.com/XVDev21/merqloom-dev/pulls?q=is%3Apr+head%3Afeat%2FMQ-101-studio) bind SHA and CI. [Local verification](../verification/MQ-101.md).
+Owner: Sol. Reviewer: Astra. Gate: M1. Status: ACCEPTED. Git: PUSHED and merged. [PR #1](https://github.com/XVDev21/merqloom-dev/pull/1), reviewed head 5d411c3, main merge 197e631. [Acceptance evidence](../verification/MQ-101.md).
 
 ## MQ-102: Catalog/PDP/variants/search
 
-Owner: Sol. Dependencies: MQ-101. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: MQ-101 accepted. Gate: M1. Status: READY. [Sol packet](../handoffs/SOL_MQ-102_CATALOG.md). Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-103: Cart and simulated checkout
 
