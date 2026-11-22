@@ -36,7 +36,7 @@ Owner: Sol. Reviewer: Astra. Dependencies: MQ-101 accepted. Gate: M1. Status: AC
 
 ## MQ-103: Cart and simulated checkout
 
-Owner: Terra. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released handoff and verification plan](../handoffs/TERRA_MQ-103_CHECKOUT.md).
 
 ## MQ-104: Direct inventory and manual fulfillment
 

@@ -31,3 +31,7 @@ Astra completed review and verified the finish-image correction at dfc3144c7d139
 Astra closed MQ-102 through [PR #3](https://github.com/XVDev21/merqloom-dev/pull/3), which merged at `89e7d3bac18b5d9598d5e49cd72e8412f3738bc6` and passed [Foundation on main](https://github.com/XVDev21/merqloom-dev/actions/runs/45040090750). Sol takes over architecture, task release, review, acceptance and authorized merges. Terra takes over implementation on released task branches. Astra's recorded decisions and the accepted implementation evidence remain the basis for future work.
 
 MQ-103 is the next implementation task. Sol releases it with its checkout and verification contract on main. MQ-104 and the MQ-105 M1 gate follow MQ-103 acceptance.
+
+## MQ-103 release · November 23
+
+[Governance PR #4](https://github.com/XVDev21/merqloom-dev/pull/4) merged at `be5449e0247becdf982c1d9511c30f4024784c67` after the [Foundation PR run](https://github.com/XVDev21/merqloom-dev/actions/runs/45041552109) and [branch run](https://github.com/XVDev21/merqloom-dev/actions/runs/45041537491) passed. Sol releases MQ-103 to Terra through the [checkout implementation and verification plan](../handoffs/TERRA_MQ-103_CHECKOUT.md). Terra will verify the live main tip containing this handoff and create `feat/MQ-103-cart-checkout` in a separate worktree. MQ-103 implementation remains READY.
