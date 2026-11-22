@@ -1,0 +1,38 @@
+name: Foundation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      MEDUSA_DISABLE_TELEMETRY: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Install locked workspace
+        run: |
+          npm install -g pnpm@10.11.1
+          pnpm install --frozen-lockfile
+      - name: Start isolated services and migrate
+        run: |
+          ./scripts/local-env.sh
+          docker compose up -d --wait
+          pnpm --dir apps/backend exec medusa db:migrate
+          ./scripts/store-env.sh
+      - name: Verify source and production builds
+        run: |
+          pnpm lint
+          pnpm typecheck
+          pnpm build
+      - name: Exercise production services
+        run: |
+          pnpm --dir apps/backend start > "$RUNNER_TEMP/backend.log" 2>&1 &
+          pnpm --dir apps/storefront start > "$RUNNER_TEMP/store.log" 2>&1 &
+          curl --retry 30 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:19000/health
+          curl -fsS http://127.0.0.1:19000/app > /dev/null
+          pnpm test

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #172831;
+  --ivory: #f6f5f0;
+  --action: #087b70;
+  --gold: #d9aa60;
+}
+body { background: var(--ivory); color: var(--ink); font: 1.125rem/1.6 system-ui, sans-serif; }
+main { max-width: 66rem; margin: auto; padding: clamp(1.25rem, 6vw, 5rem); }
+header { border-bottom: 1px solid var(--ink); padding-bottom: 1rem; margin-bottom: 3rem; }
+h1 { font: normal clamp(3rem, 9vw, 6rem)/1 Georgia, serif; margin: 1rem 0 2rem; }
+p { max-width: 52ch; margin-bottom: 1.5rem; }
+a { color: var(--action); text-decoration: underline; text-underline-offset: .2em; }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: .25rem; }
+li { padding: 1rem 0; border-top: 1px solid var(--ink); }
+h2 { font: normal 2rem/1.35 Georgia, serif; }

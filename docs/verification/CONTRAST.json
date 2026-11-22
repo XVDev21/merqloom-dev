@@ -1,0 +1,44 @@
+[
+  {
+    "foreground": "ink",
+    "background": "ivory",
+    "ratio": 13.897,
+    "normal_text_aa": true,
+    "large_text_aa": true
+  },
+  {
+    "foreground": "teal",
+    "background": "ivory",
+    "ratio": 4.481,
+    "normal_text_aa": false,
+    "large_text_aa": true
+  },
+  {
+    "foreground": "ink",
+    "background": "gold",
+    "ratio": 7.129,
+    "normal_text_aa": true,
+    "large_text_aa": true
+  },
+  {
+    "foreground": "gold",
+    "background": "ivory",
+    "ratio": 1.949,
+    "normal_text_aa": false,
+    "large_text_aa": false
+  },
+  {
+    "foreground": "ink",
+    "background": "teal",
+    "ratio": 3.102,
+    "normal_text_aa": false,
+    "large_text_aa": true
+  },
+  {
+    "foreground": "accessible teal #087B70",
+    "background": "ivory #F6F5F0",
+    "ratio": 4.718,
+    "normal_text_aa": true,
+    "large_text_aa": true
+  }
+]
