@@ -1,6 +1,6 @@
 # Claims register
 
-Date: 2026-11-22. All feature statements remain PLANNED until demonstrated. Original full copy is retained in ../../content/MERQLOOM_STUDIO_COMPLETE_LANDING_PAGE_COPY.md.
+Date: 2026-11-22. Status is scoped to the recorded surface and evidence. Original full copy is retained in ../../content/MERQLOOM_STUDIO_COMPLETE_LANDING_PAGE_COPY.md.
 
 MQ-CL-001. Hero: “A better shopping experience. A clearer way to run commerce.” HYPOTHESIS/POSITIONING. Source: project thesis. Not a comparative or measured result. Approved only with in-development context.
 MQ-CL-002. Development disclosure: independent demo with fictional products/payments/suppliers. VERIFIED as project scope, not working software. Must be visible near entry and checkout.
@@ -18,3 +18,10 @@ MQ-CL-012. Early walkthrough requests. BLOCKED pending a real request channel. U
 Rejected: client affiliation, real supplier partnerships, production SaaS availability, conversion uplift, fake reviews/urgency, guaranteed stock/shipping, clinical claims. Historical research does not authorize these claims.
 
 Every implemented section must record exact final claim text, source/fixture/commit, date, audience, limitations and Astra review. Updating wording does not promote implementation status.
+
+
+## M0 publication review
+
+November 22, Astra. Studio visitors deciding whether to inspect a sample product see “Explore the first two sample products in Merqloom’s development catalog.” VERIFIED by the seed and the two-product browser journey at foundation commit 9ed5bd5. “Explore the demo catalog” opens /store and returns live Medusa records.
+
+The catalog labels both products fictional. The tray and pouch measurements come from the committed fixture descriptions. “Supplier fulfillment is planned” accurately describes the zero-availability supplier preview. The statement that payments and shipments are simulated describes demo scope. M0 has no order submission UI. Functional checkout and fulfillment claims require M1/M2 evidence.

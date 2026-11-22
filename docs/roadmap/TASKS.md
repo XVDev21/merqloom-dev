@@ -1,34 +1,34 @@
 # Task ledger
 
-Updated 2026-11-22, Asia/Manila. No task is ACCEPTED. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
+Updated 2026-11-22, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
 
 ## MQ-001: Environment/upstream/repository preflight
 
-Owner: Astra. Dependencies: None. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: None. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-002: PRD, ADRs and governance
 
-Owner: Astra. Dependencies: MQ-001. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: MQ-001. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-003: Official scaffold and dependencies
 
-Owner: Astra. Dependencies: MQ-001, MQ-002. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: MQ-001, MQ-002. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-004: Isolated infrastructure and synthetic seed
 
-Owner: Astra. Dependencies: MQ-003. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: MQ-003. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-005: Baseline checks, CI, initial push and handoff
 
-Owner: Astra. Dependencies: MQ-003, MQ-004, MQ-006. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: MQ-003, MQ-004, MQ-006. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-006: Design foundation and claim policy
 
-Owner: Astra. Dependencies: MQ-002, MQ-003. Gate: M0. Status: IN_REVIEW. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Astra. Dependencies: MQ-002, MQ-003. Gate: M0. Status: ACCEPTED. Git: PUSHED. Branch: main. Foundation SHA: 9ed5bd5. CI: 45011973691. Direct initial publication.
 
 ## MQ-101: Studio and working CTAs
 
-Owner: Sol. Dependencies: M0 accepted. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: M0 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
 ## MQ-102: Catalog/PDP/variants/search
 
