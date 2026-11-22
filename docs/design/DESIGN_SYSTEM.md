@@ -42,3 +42,9 @@ Store polish favors Jakub with Emil restraint; Console prioritizes Emil. Feedbac
 ## Acceptance evidence
 
 Inspect production UI at 360, 390, 768, 1280 and 1440 px, keyboard and reduced motion. Run taste lint/inspect and inspect every final screenshot; record actual critique and unresolved failures. Use native Admin screenshots only after access works, clearly identified as demo. Record all asset provenance. M0 catalog screenshots are under docs/verification/screens. The full M1 visual critique is pending.
+
+## MQ-101 implementation for review
+
+The split-stage direction keeps the sample products alongside the opening explanation. On this page, the desk tray and organizer pouch become an illustrated guide to the two fulfillment paths. Visitors can open either sequence using native disclosures, including when JavaScript is disabled. The Ink field introduces Store and operations side by side. The warmer journey section gives the demo sequence a separate backdrop.
+
+The hero slot was redrawn from “Striped card beside the room” to “Inset photograph, crossing wordmark” on seed 235165797. The page adapts the inset composition to an original CSS illustration labeled as fictional demo fixtures. Photography and overlaid text were excluded because no verified product photographs exist and the approved geometry requires readable text. The illustration derives from the two seeded desk-accessory concepts. It adds no downloaded images, fonts or other third-party assets. Georgia and the system sans are local fallbacks.

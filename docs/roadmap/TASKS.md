@@ -28,7 +28,7 @@ Owner: Astra. Dependencies: MQ-002, MQ-003. Gate: M0. Status: ACCEPTED. Git: PUS
 
 ## MQ-101: Studio and working CTAs
 
-Owner: Sol. Dependencies: M0 accepted. Gate: M1. Status: READY. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Dependencies: M0 accepted. Gate: M1. Status: IN_REVIEW (Astra). Git: PUSHED. Branch: `feat/MQ-101-studio`. The [branch history](https://github.com/XVDev21/merqloom-dev/commits/feat/MQ-101-studio) and [review record](https://github.com/XVDev21/merqloom-dev/pulls?q=is%3Apr+head%3Afeat%2FMQ-101-studio) bind SHA and CI. [Local verification](../verification/MQ-101.md).
 
 ## MQ-102: Catalog/PDP/variants/search
 
