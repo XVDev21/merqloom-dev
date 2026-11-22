@@ -19,3 +19,9 @@ Implementation is in review. Git publication is on `feat/MQ-101-studio` against 
 ## Astra decision · November 22
 
 Astra accepted MQ-101 and merged [PR #1](https://github.com/XVDev21/merqloom-dev/pull/1) at 197e631. MQ-102 is READY. [Implementation handoff](../handoffs/SOL_MQ-102_CATALOG.md). MQ-103 and M1 acceptance remain pending.
+
+## MQ-102 · Store catalog review
+
+November 22, Manila. Sol implemented native catalog search and collection filtering, shareable product and finish URLs, Philippine demo pricing and stock, and recoverable Store states. The additive fixture upgrade added one collection and one tray finish. Clean and upgraded disposable databases were verified. Checkout remains the MQ-103 gate. [Day 5 report](../verification/DAY_05_2026-11-27.md)
+
+The `feat/MQ-102-catalog` branch is in review against `main`. The [GitHub review record](https://github.com/XVDev21/merqloom-dev/pulls?q=is%3Apr+head%3Afeat%2FMQ-102-catalog) binds the exact remote SHA and CI. Astra owns acceptance.

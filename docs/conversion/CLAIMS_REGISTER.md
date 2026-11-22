@@ -4,7 +4,7 @@ Date: 2026-11-22. Status is scoped to the recorded surface and evidence. Origina
 
 MQ-CL-001. Hero: “A better shopping experience. A clearer way to run commerce.” HYPOTHESIS/POSITIONING. Source: project thesis. Not a comparative or measured result. Approved only with in-development context.
 MQ-CL-002. Development disclosure: independent demo with fictional products/payments/suppliers. VERIFIED as project scope, not working software. Must be visible near entry and checkout.
-MQ-CL-003. Product discovery, variants and cart. PLANNED. Requires Medusa API and browser evidence at M1.
+MQ-CL-003. Product discovery and variant selection. VERIFIED for the MQ-102 demo catalog and product pages. Cart remains PLANNED for MQ-103.
 MQ-CL-004. Direct inventory/order visibility. PLANNED. Requires actual native order and inventory lifecycle evidence.
 MQ-CL-005. Supplier coordination/import/synchronization. PLANNED. Requires M2 idempotent import and freshness tests; later label mock behavior SIMULATED.
 MQ-CL-006. Automation/retries. PLANNED. Requires durable worker and failure/restart evidence.
@@ -46,3 +46,12 @@ November 22, 2026, Manila. Audience assumption from the PRD: independent merchan
 ## Astra decision · November 22
 
 Astra approved the MQ-101 copy at 5d411c3. Current claims are supported by the live catalog and M0 Admin evidence. Checkout and supplier handling are explicitly planned. The catalog CTA and roadmap destination both worked during review.
+
+## MQ-102 Store publication review
+
+November 22, 2026, Manila · Sol · Astra review pending. The assumed fictional shopper wants to decide whether a desk accessory fits and whether the desired finish has stock. They can compare the catalog and product details with the option of leaving the demonstration. The main uncertainty is which finish, price, and fulfillment source apply to the item selected.
+
+- Studio now says “Search the catalog, filter by collection, and see each product’s dimensions, finish, demo price, and stock from Medusa.” Native `q` and collection membership, browser results, and live Product, Region and Inventory values verified this scoped claim under MQ-CL-003. The equivalent roadmap stage now reads “Catalog available.” The Day 5 report records the checks and fixture IDs. [Day 5 evidence](../verification/DAY_05_2026-11-27.md)
+- The tray’s “Merchant stock” and the pouch’s “Fictional supplier preview” come from the native products’ fixture source metadata. Medusa reports zero available pouch stock in the seeded sales channel. Supplier ordering and fulfillment remain planned under MQ-CL-005. No Store checkout or delivery promise is made.
+- The Philippine demo prices are calculated for the chosen native variant, PHP 450 Natural tray, PHP 520 Walnut tray, and PHP 320 Natural pouch in the test configuration. The view labels shipping as simulated. Cart and checkout remain planned under MQ-103.
+- The rendered media depict fictional products and the two sample tray finishes. Image provenance and accessible descriptions are recorded in the [catalog media manifest](../design/CATALOG_MEDIA.md).

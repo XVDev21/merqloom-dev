@@ -74,8 +74,8 @@ export default function Studio() {
         <div className={`${styles.wrap} ${styles.pair}`}>
           <section id="storefront">
             <h2>Merqloom Store</h2>
-            <p>Browse two fictional desk accessories today. The public demo catalog reads titles and descriptions, including sample dimensions, from Medusa.</p>
-            <p>Planned Store work adds organized collections, search, product details and variants, then a cart with selected quantities, prices, and fulfillment information before simulated checkout.</p>
+            <p>Browse two fictional desk accessories today. Search the catalog, filter by collection, and see each product’s dimensions, finish, demo price, and stock from Medusa.</p>
+            <p>Planned Store work adds a cart with selected quantities, prices, and fulfillment information before simulated checkout.</p>
             <Link href="/store">Explore the demo catalog</Link>
           </section>
           <section id="operations">
