@@ -1,0 +1,16 @@
+.git
+.cache
+.tools
+.playwright-cli
+.taste-skill
+node_modules
+**/node_modules
+**/.next
+**/.medusa
+**/.env
+**/.env.*
+.env
+.env.*
+**/*.log
+**/*.tsbuildinfo
+docs/verification/screens

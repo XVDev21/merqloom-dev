@@ -21,7 +21,7 @@ jobs:
       - name: Start isolated services and migrate
         run: |
           ./scripts/local-env.sh
-          docker compose up -d --wait
+          docker compose up -d --wait postgres redis
           pnpm --dir apps/backend exec medusa db:migrate
           ./scripts/store-env.sh
       - name: Verify source and production builds
