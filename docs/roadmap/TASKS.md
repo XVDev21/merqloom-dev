@@ -40,7 +40,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: AC
 
 ## MQ-104: Direct inventory and manual fulfillment
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-103 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released handoff and master prompt](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md).
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-103 accepted. Gate: M1. Status: IN_REVIEW. Implementation branch: `feat/MQ-104-direct-fulfillment`; [PR #9](https://github.com/XVDev21/merqloom-dev/pull/9) reports the exact pushed head and Foundation checks. [Day 7 evidence](../verification/DAY_07_2026-11-29.md) · [Released handoff](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md).
 
 ## MQ-105: Direct-flow gate review
 

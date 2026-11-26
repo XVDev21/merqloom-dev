@@ -9,7 +9,7 @@
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "build": "pnpm --workspace-concurrency=1 -r build",
-    "test": "node --test --test-concurrency=1 scripts/baseline.test.mjs scripts/cart-checkout.test.mjs scripts/medusa-logging.test.mjs",
+    "test": "node --test --test-concurrency=1 scripts/baseline.test.mjs scripts/cart-checkout.test.mjs scripts/medusa-logging.test.mjs scripts/direct-fulfillment.test.mjs",
     "backend:dev": "pnpm --dir apps/backend dev",
     "storefront:dev": "pnpm --dir apps/storefront dev"
   },
