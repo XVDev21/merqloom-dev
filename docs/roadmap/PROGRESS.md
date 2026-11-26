@@ -55,3 +55,7 @@ November 26, Manila. Terra traced a fictional direct-stock tray order through na
 ## MQ-104 acceptance · November 26
 
 Sol accepted MQ-104 on `88366fc012c09cca5ca3a40d631a4ff0fcb414a9` and merged [PR #9](https://github.com/XVDev21/merqloom-dev/pull/9) at `92051bff02628444d0c36069f281fa59e3cf343e`. The [Day 7 acceptance record](../verification/DAY_07_2026-11-29.md#sol-acceptance--november-26) covers the shipped demo order, stock transitions and repeat-action evidence. MQ-105 remains the next Sol review. M1 and M2 release remain pending.
+
+## MQ-106 infrastructure release · November 26
+
+Sol releases [full-stack Compose development](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md) to Terra for a single implementation PR. The task covers the four-service local stack, existing data-volume preservation, in-container hot reload, portable runtime images, Makefile commands and CI smoke. MQ-105 remains the separate direct-flow acceptance decision. Cloud rollout remains future work.
