@@ -47,3 +47,7 @@ Sol accepted MQ-103 at the reviewed head `60bc4801cfcb90595e6acb21ca75d8eac55c54
 ## MQ-104 release · November 26
 
 Sol releases [MQ-104 to Terra](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md) from the accepted MQ-103 baseline. The task is READY. The handoff covers the native direct-stock order, inventory observation, Admin fulfillment, simulated shipment and regression evidence. MQ-105 remains pending Sol's M1 review. Infrastructure work remains a separate directive.
+
+## MQ-104 · Direct fulfillment review
+
+November 26, Manila. Terra traced a fictional direct-stock tray order through native Medusa Admin fulfillment and a simulated shipment, and added disposable lifecycle regression coverage. [Day 7 evidence](../verification/DAY_07_2026-11-29.md) records the stock transitions, replay checks and operator screenshots. Status: IN_REVIEW. Sol owns MQ-104 review and the separate MQ-105 M1 decision.
