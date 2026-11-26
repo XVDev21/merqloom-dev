@@ -51,3 +51,7 @@ Sol releases [MQ-104 to Terra](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md) f
 ## MQ-104 · Direct fulfillment review
 
 November 26, Manila. Terra traced a fictional direct-stock tray order through native Medusa Admin fulfillment and a simulated shipment, and added disposable lifecycle regression coverage. [Day 7 evidence](../verification/DAY_07_2026-11-29.md) records the stock transitions, replay checks and operator screenshots. Status: IN_REVIEW. Sol owns MQ-104 review and the separate MQ-105 M1 decision.
+
+## MQ-104 acceptance · November 26
+
+Sol accepted MQ-104 on `88366fc012c09cca5ca3a40d631a4ff0fcb414a9` and merged [PR #9](https://github.com/XVDev21/merqloom-dev/pull/9) at `92051bff02628444d0c36069f281fa59e3cf343e`. The [Day 7 acceptance record](../verification/DAY_07_2026-11-29.md#sol-acceptance--november-26) covers the shipped demo order, stock transitions and repeat-action evidence. MQ-105 remains the next Sol review. M1 and M2 release remain pending.
