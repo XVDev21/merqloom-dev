@@ -39,3 +39,7 @@ MQ-103 is the next implementation task. Sol releases it with its checkout and ve
 ## MQ-103 · Cart and simulated checkout review
 
 November 23, Manila. Terra implemented the released native cart and simulated checkout from base `e2948e716f741d1b6b6ca5fbb57f8d059edc146e`. The shopper can add available direct-stock tray finishes, change quantities, review native totals and create a Medusa demo order. Payment and shipping are simulated; the supplier pouch remains browse-only. The [Day 6 evidence](../verification/DAY_06_2026-11-28.md) records the disposable environment, recovery and duplicate-submission checks, browser review and open PR. Status: IN_REVIEW. Sol owns acceptance. Manual fulfillment and M1 remain open.
+
+## Sol decision · November 26
+
+Sol accepted MQ-103 at the reviewed head `60bc4801cfcb90595e6acb21ca75d8eac55c54cb` and merged [PR #6](https://github.com/XVDev21/merqloom-dev/pull/6) at `8d065fd8a25be20c64372c5cd85b1fbff302d65b`. The three review findings are closed. See [Day 6 acceptance](../verification/DAY_06_2026-11-28.md#sol-acceptance--november-26) for the verification and remaining limits. MQ-104 direct inventory and manual fulfillment is next and awaits its own handoff. M1 remains open.
