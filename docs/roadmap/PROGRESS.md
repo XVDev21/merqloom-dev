@@ -43,3 +43,7 @@ November 23, Manila. Terra implemented the released native cart and simulated ch
 ## Sol decision · November 26
 
 Sol accepted MQ-103 at the reviewed head `60bc4801cfcb90595e6acb21ca75d8eac55c54cb` and merged [PR #6](https://github.com/XVDev21/merqloom-dev/pull/6) at `8d065fd8a25be20c64372c5cd85b1fbff302d65b`. The three review findings are closed. See [Day 6 acceptance](../verification/DAY_06_2026-11-28.md#sol-acceptance--november-26) for the verification and remaining limits. MQ-104 direct inventory and manual fulfillment is next and awaits its own handoff. M1 remains open.
+
+## MQ-104 release · November 26
+
+Sol releases [MQ-104 to Terra](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md) from the accepted MQ-103 baseline. The task is READY. The handoff covers the native direct-stock order, inventory observation, Admin fulfillment, simulated shipment and regression evidence. MQ-105 remains pending Sol's M1 review. Infrastructure work remains a separate directive.

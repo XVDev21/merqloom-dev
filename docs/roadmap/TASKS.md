@@ -40,7 +40,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: AC
 
 ## MQ-104: Direct inventory and manual fulfillment
 
-Owner: Terra. Dependencies: MQ-103. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-103 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released handoff and master prompt](../handoffs/TERRA_MQ-104_DIRECT_FULFILLMENT.md).
 
 ## MQ-105: Direct-flow gate review
 
