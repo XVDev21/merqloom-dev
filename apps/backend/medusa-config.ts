@@ -1,8 +1,10 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
+import { safeLogger } from './src/lib/safe-logger'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 module.exports = defineConfig({
+  logger: safeLogger,
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     redisUrl: process.env.REDIS_URL,

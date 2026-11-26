@@ -55,3 +55,7 @@ November 22, 2026, Manila · Sol · Astra review pending. The assumed fictional 
 - The tray’s “Merchant stock” and the pouch’s “Fictional supplier preview” come from the native products’ fixture source metadata. Medusa reports zero available pouch stock in the seeded sales channel. Supplier ordering and fulfillment remain planned under MQ-CL-005. No Store checkout or delivery promise is made.
 - The Philippine demo prices are calculated for the chosen native variant, PHP 450 Natural tray, PHP 520 Walnut tray, and PHP 320 Natural pouch in the test configuration. The view labels shipping as simulated. Cart and checkout remain planned under MQ-103.
 - The rendered media depict fictional products and the two sample tray finishes. Image provenance and accessible descriptions are recorded in the [catalog media manifest](../design/CATALOG_MEDIA.md).
+
+## MQ-103 checkout review
+
+November 23, 2026, Manila · Terra · Sol review pending. The fictional shopper can select an available direct-stock tray finish, manage a native cart and complete a simulated checkout. The Store displays Medusa's item subtotal, shipping, tax and total; a demo order is created in Medusa. Payment and shipping remain simulated. The pouch is a browse-only supplier preview. This supports the scoped Studio and roadmap wording in the MQ-103 branch, not a claim of live payments, actual delivery or completed manual fulfillment. [Day 6 evidence](../verification/DAY_06_2026-11-28.md)

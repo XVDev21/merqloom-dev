@@ -35,3 +35,7 @@ MQ-103 is the next implementation task. Sol releases it with its checkout and ve
 ## MQ-103 release · November 23
 
 [Governance PR #4](https://github.com/XVDev21/merqloom-dev/pull/4) merged at `be5449e0247becdf982c1d9511c30f4024784c67` after the [Foundation PR run](https://github.com/XVDev21/merqloom-dev/actions/runs/45041552109) and [branch run](https://github.com/XVDev21/merqloom-dev/actions/runs/45041537491) passed. Sol releases MQ-103 to Terra through the [checkout implementation and verification plan](../handoffs/TERRA_MQ-103_CHECKOUT.md). Terra will verify the live main tip containing this handoff and create `feat/MQ-103-cart-checkout` in a separate worktree. MQ-103 implementation remains READY.
+
+## MQ-103 · Cart and simulated checkout review
+
+November 23, Manila. Terra implemented the released native cart and simulated checkout from base `e2948e716f741d1b6b6ca5fbb57f8d059edc146e`. The shopper can add available direct-stock tray finishes, change quantities, review native totals and create a Medusa demo order. Payment and shipping are simulated; the supplier pouch remains browse-only. The [Day 6 evidence](../verification/DAY_06_2026-11-28.md) records the disposable environment, recovery and duplicate-submission checks, browser review and open PR. Status: IN_REVIEW. Sol owns acceptance. Manual fulfillment and M1 remain open.
