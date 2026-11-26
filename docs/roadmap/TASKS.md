@@ -1,6 +1,6 @@
 # Task ledger
 
-Updated 2026-11-23, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
+Updated 2026-11-26, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
 
 ## MQ-001: Environment/upstream/repository preflight
 
@@ -36,7 +36,7 @@ Owner: Sol. Reviewer: Astra. Dependencies: MQ-101 accepted. Gate: M1. Status: AC
 
 ## MQ-103: Cart and simulated checkout
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: IN_REVIEW. Branch: `feat/MQ-103-cart-checkout`. [PR #6](https://github.com/XVDev21/merqloom-dev/pull/6) carries the pushed head and Foundation checks. [Day 6 evidence](../verification/DAY_06_2026-11-28.md) · [Released handoff](../handoffs/TERRA_MQ-103_CHECKOUT.md). Sol owns acceptance and merge.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: ACCEPTED. Git: PUSHED and merged. Reviewed head: `60bc4801cfcb90595e6acb21ca75d8eac55c54cb`. Main merge: `8d065fd8a25be20c64372c5cd85b1fbff302d65b`. [PR #6](https://github.com/XVDev21/merqloom-dev/pull/6) · [Day 6 evidence](../verification/DAY_06_2026-11-28.md) · [Released handoff](../handoffs/TERRA_MQ-103_CHECKOUT.md).
 
 ## MQ-104: Direct inventory and manual fulfillment
 
