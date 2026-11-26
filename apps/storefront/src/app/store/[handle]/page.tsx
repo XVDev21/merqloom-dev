@@ -5,6 +5,7 @@ import { Suspense } from "react"
 import { catalogHref, demoPrice, fulfillmentSource, getProduct, readFilters, type CatalogFilters, type SearchParams, type Variant } from "../catalog"
 import Loading from "../loading"
 import ProductImage from "../product-image"
+import PendingButton from "../pending-button"
 import StoreState from "../store-state"
 import styles from "../store.module.css"
 import VariantPending from "../variant-pending"
@@ -82,6 +83,15 @@ async function ProductDetails({ handle, filters, requested, ambiguous }: {
         </div> : <p className={styles.stock} role="status">{variants.length
           ? "This finish is unavailable. Choose a listed finish to see its price and stock."
           : "No finishes are available for this product."}</p>}
+        {selected && !supplier && product.metadata?.source === "direct" && selected.manage_inventory &&
+          typeof selected.inventory_quantity === "number" && selected.inventory_quantity > 0 && demoPrice(selected) &&
+          <form className={styles.addToCart} action="/store/cart/action" method="post">
+            <input type="hidden" name="action" value="add" />
+            <input type="hidden" name="handle" value={product.handle} />
+            <input type="hidden" name="variant_id" value={selected.id} />
+            <label>Quantity <input type="number" name="quantity" min="1" max={selected.inventory_quantity} step="1" defaultValue="1" required /></label>
+            <PendingButton pending="Adding…">Add {selected.title} to cart</PendingButton>
+          </form>}
         <p className={styles.disclosure}>{supplier
           ? "Product illustration. Supplier fulfillment is planned for this fictional preview."
           : "Product illustration. Prices and stock are for the Philippine demo. Shipping is simulated."}</p>

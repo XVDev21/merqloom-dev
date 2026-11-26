@@ -8,9 +8,9 @@
     "medusa-storefront"
   ],
   "scripts": {
-    "dev": "next dev -H 127.0.0.1 -p 18000",
+    "dev": "MERQLOOM_LOOPBACK_HTTP=true next dev -H 127.0.0.1 -p 18000",
     "build": "next build",
-    "start": "next start -H 127.0.0.1 -p 18000",
+    "start": "MERQLOOM_LOOPBACK_HTTP=true next start -H 127.0.0.1 -p 18000",
     "lint": "eslint .",
     "analyze": "ANALYZE=true next build",
     "typecheck": "tsc --noEmit"
@@ -28,6 +28,7 @@
     "@stripe/stripe-js": "^8.2.0",
     "clsx": "^2.1.1",
     "instantsearch.js": "4.113.0",
+    "ioredis": "6.0.0",
     "lodash": "^4.17.21",
     "next": "16.3.8",
     "pg": "^8.11.3",

@@ -20,7 +20,9 @@ pnpm typecheck
 pnpm build
 ```
 
-The migration creates the PHP region, manual payment and fulfillment settings, a publishable key, two sample products and stock. Running migrations again preserves fixtures. The store setup reads the scoped publishable key from this project's database and writes the ignored storefront environment.
+The migration creates the PHP region, manual payment and fulfillment settings, a publishable key, two sample products and stock. Running migrations again preserves fixtures. The store setup reads the scoped publishable key from the active Compose project's `merqloom` database and copies the backend Redis URL into the ignored storefront environment. Confirm the active Compose project and database before running it.
+
+The Store uses Redis for opaque cart sessions, with a 30-day expiry. Cart and order values remain in Medusa; the session holds the cart reference, completion state and the minimal confirmation summary. If an order result is uncertain, the same cart remains locked for a status retry. The local start command enables its HTTP cookie exception only for the loopback demo; other runtimes must use HTTPS and the default secure cookie. Use fictional contact and address data.
 
 Start one process per terminal from the repository root with the project toolchain on PATH.
 

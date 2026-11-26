@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const stages = [
   ["Foundation", "Available in the demo", "Browse the seeded catalog. The local foundation also includes authenticated native Medusa Admin, sample inventory, and isolated services."],
-  ["Shopping experience", "Catalog available", "Browse collections, search the catalog, and compare finishes. The next work verifies a server-backed cart, clear totals, and simulated checkout."],
+  ["Shopping experience", "Checkout in review", "Browse and compare finishes, manage a native cart, and place a simulated demo order. Independent review is pending."],
   ["Connected operations", "Planned", "Verify a direct-stock order and manual fulfillment in Admin first. A later milestone will exercise fictional supplier imports, stock freshness, mock fulfillment, and retry visibility."],
   ["Demonstration release", "Targeted", "Replay both test-order paths, review accessibility, and document a repeatable walkthrough. Each milestone requires verification and review."],
 ]

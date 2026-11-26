@@ -36,7 +36,7 @@ Owner: Sol. Reviewer: Astra. Dependencies: MQ-101 accepted. Gate: M1. Status: AC
 
 ## MQ-103: Cart and simulated checkout
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released handoff and verification plan](../handoffs/TERRA_MQ-103_CHECKOUT.md).
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-102 accepted. Gate: M1. Status: IN_REVIEW. Branch: `feat/MQ-103-cart-checkout`. The [PR review record](https://github.com/XVDev21/merqloom-dev/pulls?q=is%3Apr+head%3Afeat%2FMQ-103-cart-checkout) carries the pushed head and Foundation checks. [Day 6 evidence](../verification/DAY_06_2026-11-28.md) · [Released handoff](../handoffs/TERRA_MQ-103_CHECKOUT.md). Sol owns acceptance and merge.
 
 ## MQ-104: Direct inventory and manual fulfillment
 

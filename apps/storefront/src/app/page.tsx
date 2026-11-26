@@ -19,7 +19,7 @@ const questions = [
   ["Is Merqloom available for production use?", "Merqloom is in development. The initial demonstration uses fictional products, sample data, and simulated transactions."],
   ["Does Merqloom support dropshipping?", "A fictional supplier workflow is planned. Live integrations depend on provider specifications, approval, and separate validation."],
   ["Can Merqloom manage my own inventory?", "The foundation includes a seeded merchant stock location. The direct demo will verify order handling and manual fulfillment from that stock."],
-  ["Does Merqloom process real payments?", "The planned checkout will simulate payments and shipping. Production payments would require an approved provider and separate validation."],
+  ["Does Merqloom process real payments?", "The demo checkout simulates payments and shipping. Production payments would require an approved provider and separate validation."],
   ["Will it work with different product categories?", "The catalog model supports product variants. The demo uses desk accessories, and other categories may have additional requirements."],
   ["Is it a replacement for Shopify or WooCommerce?", "Merqloom is an independent development project. Its current scope is a bounded commerce demonstration."],
   ["How much will it cost?", "Commercial pricing is undecided. The development roadmap tracks validation of the core workflows."],
@@ -40,7 +40,7 @@ export default function Studio() {
     <main id="studio-content" tabIndex={-1}>
       <div className={`${styles.wrap} ${styles.hero}`}>
         <div className={styles.heroCopy}>
-          <p className={styles.notice}>Merqloom is an independent commerce platform in development. The demo catalog uses fictional products. Planned checkout and supplier flows use simulated payments, shipping, and a fictional supplier.</p>
+          <p className={styles.notice}>Merqloom is an independent commerce platform in development. The demo uses fictional products and simulated payment and shipping. Supplier flows remain planned.</p>
           <h1>Commerce,<br />connected</h1>
           <p className={styles.lead}>Merqloom is being built to connect what shoppers see with the inventory, orders, and fulfillment merchants manage.</p>
           <p>For independent merchants and growing teams, the goal is a better shopping experience and a clearer way to run commerce.</p>
@@ -75,7 +75,7 @@ export default function Studio() {
           <section id="storefront">
             <h2>Merqloom Store</h2>
             <p>Browse two fictional desk accessories today. Search the catalog, filter by collection, and see each product’s dimensions, finish, demo price, and stock from Medusa.</p>
-            <p>Planned Store work adds a cart with selected quantities, prices, and fulfillment information before simulated checkout.</p>
+            <p>Available tray finishes can be added to a cart. Review native totals and simulated shipping before placing a demo order.</p>
             <Link href="/store">Explore the demo catalog</Link>
           </section>
           <section id="operations">
@@ -118,13 +118,13 @@ export default function Studio() {
         <section id="journey" className={`${styles.wrap} ${styles.section} ${styles.split}`}>
           <div>
             <h2>The demo journey</h2>
-            <p>Today, the public journey reaches the catalog. Checkout, order processing, and fulfillment will be demonstrated in later milestones using test transactions.</p>
+            <p>Today, the public journey reaches simulated checkout and creates a demo order in Medusa. Manual fulfillment and supplier processing remain later milestones.</p>
             <Link href="/store">Start with the demo catalog</Link>
           </div>
           <ol className={styles.steps}>
             <li><strong>Prepare the catalog.</strong> Set up products, variants, and stock in Medusa.</li>
             <li><strong>Publish to the Store.</strong> Visitors browse the two seeded products today.</li>
-            <li><strong>Receive a demo order.</strong> Planned simulated checkout will record the order in Medusa.</li>
+            <li><strong>Receive a demo order.</strong> Simulated checkout records the order in Medusa.</li>
             <li><strong>Process fulfillment.</strong> The roadmap covers manual fulfillment first and the fictional supplier path after it.</li>
             <li><strong>Review progress.</strong> Planned checks will trace order status, stock changes, and supplier exceptions.</li>
           </ol>
@@ -139,7 +139,7 @@ export default function Studio() {
           </div>
           <div>
             <h2>Clear buying decisions</h2>
-            <p>The Store is designed around useful specifications, readable screens, and keyboard navigation. Future checkout work will make prices, available delivery information, and simulation terms clear before submission. Measurement remains a plan.</p>
+            <p>The Store is designed around useful specifications, readable screens, and keyboard navigation. Checkout shows native totals and simulation terms before submission. Measurement remains a plan.</p>
           </div>
           <div>
             <h2>Room to extend</h2>

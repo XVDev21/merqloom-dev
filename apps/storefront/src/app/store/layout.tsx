@@ -7,6 +7,7 @@ export default function StoreLayout({ children }: { children: React.ReactNode })
     <header className={styles.header}>
       <Link className={styles.brand} href="/store">Merqloom <span>Store</span></Link>
       <nav aria-label="Store">
+        <Link href="/store/cart">Cart</Link>{" · "}
         <Link href="/">Merqloom Studio</Link>
       </nav>
     </header>
