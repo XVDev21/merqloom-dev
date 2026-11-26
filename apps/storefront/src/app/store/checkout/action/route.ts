@@ -38,6 +38,9 @@ export async function POST(request: NextRequest) {
       if (session.phase === 'complete') return '/store/confirmation'
       if (action === 'prepare') {
         if (session.phase === 'completing') return '/store/checkout?error=uncertain'
+        // Editing invalidates the previous review even if validation or preparation fails.
+        session.phase = 'open'
+        await saveSession(token, session)
         const input = checkoutInput(form)
         const invalid = invalidFields(input)
         if (invalid.length) return `/store/checkout?invalid=${invalid.join(',')}`

@@ -67,6 +67,16 @@ async page => {
   await page.getByRole('heading', {name:'Review your demo order'}).waitFor()
   await page.getByText(/PHP\s1,430\.00/).waitFor()
   check(await page.getByText(/Simulated payment and simulated shipping/).count() > 0, 'Missing pre-submit disclosure')
+  await page.getByRole('link', {name:'Edit contact and address'}).click()
+  await page.getByLabel('Philippine postal code').fill('12')
+  // Submit the native form directly so the server, not client validation, rejects it.
+  await page.evaluate(() => HTMLFormElement.prototype.submit.call(document.querySelector('form[action="/store/checkout/action"]')))
+  await page.waitForURL(url => url.searchParams.get('invalid') === 'postal_code')
+  await page.getByText('Enter a four-digit postal code.').waitFor()
+  check(await page.getByRole('button', {name:'Place simulated order — payment and shipping simulated'}).count() === 0, 'Rejected edit left the old review active')
+  await page.getByLabel('Philippine postal code').fill('1200')
+  await page.getByRole('button', {name:'Review simulated order'}).click()
+  await page.getByRole('heading', {name:'Review your demo order'}).waitFor()
   const submit = page.getByRole('button', {name:'Place simulated order — payment and shipping simulated'})
   await page.getByRole('link', {name:'Edit contact and address'}).focus()
   await page.keyboard.press('Tab')
@@ -100,5 +110,5 @@ async page => {
     await other.goto(base + '/store/confirmation')
     await other.getByRole('heading', {name:'No confirmed order in this session'}).waitFor()
   } finally { await isolated.close() }
-  return 'Both finishes, persistence, native totals, keyboard focus, field validation, simulated disclosures, confirmation refresh, session separation, reduced motion and reflow passed at five widths'
+  return 'Both finishes, persistence, native totals, keyboard focus, client validation, rejected server-side edit and re-review, simulated disclosures, confirmation refresh, session separation, reduced motion and reflow passed at five widths'
 }

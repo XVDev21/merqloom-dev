@@ -123,6 +123,30 @@ async function orderCount(cartId) {
   finally { await db.end() }
 }
 
+test('a rejected address edit revokes review until valid details are reviewed again', async () => {
+  const all = await variants(), redis = redisClient()
+  try {
+    const cookie = await addCart(all['MQ-DIRECT-TRAY'])
+    const {cartId} = await sessionFor(redis, cookie)
+    const prepared = await post('/store/checkout/action', {action:'prepare', ...contact}, cookie)
+    assert.match(prepared.headers.get('location'), /review/)
+    const rejected = await post('/store/checkout/action', {action:'prepare', ...contact, postal_code:'12'}, cookie)
+    assert.match(rejected.headers.get('location'), /invalid=postal_code/)
+    const page = await (await fetch(rejected.headers.get('location'), {headers:{cookie}})).text()
+    assert.ok(page.includes('Enter a four-digit postal code.'), `the address form shows the rejected postal code error (old review visible: ${page.includes('Review your demo order')}; submit visible: ${page.includes('Place simulated order — payment and shipping simulated')})`)
+    assert.ok(!page.includes('Place simulated order — payment and shipping simulated'), 'the old review cannot be submitted')
+    const blocked = await post('/store/checkout/action', {action:'complete'}, cookie)
+    assert.match(blocked.headers.get('location'), /error=invalid/)
+    assert.ok((await sessionFor(redis, cookie)).cartId === cartId, 'the original cart is preserved')
+    assert.equal((await orderCount(cartId)).length, 0)
+    const reviewedAgain = await post('/store/checkout/action', {action:'prepare', ...contact}, cookie)
+    assert.match(reviewedAgain.headers.get('location'), /review/)
+    const completed = await post('/store/checkout/action', {action:'complete'}, cookie)
+    assert.match(completed.headers.get('location'), /confirmation/)
+    assert.equal((await orderCount(cartId)).length, 1)
+  } finally { await redis.quit() }
+})
+
 test('separate sessions, invalid variants, quantities, and supplier stock are enforced', async () => {
   const all = await variants()
   const natural = all['MQ-DIRECT-TRAY'], walnut = all['MQ-DIRECT-TRAY-WALNUT'], pouch = all['MQ-SUPPLIER-POUCH']
@@ -256,6 +280,9 @@ test('an uncertain completion stays locked when a retry cannot establish the out
     session.phase = 'completing'
     session.cartId = 'cart_missing'
     await redis.set(sessionKey, JSON.stringify(session), 'EX', 60)
+    const edit = await post('/store/checkout/action', {action:'prepare', ...contact, postal_code:'12'}, cookie)
+    assert.match(edit.headers.get('location'), /uncertain/)
+    assert.equal((await sessionFor(redis, cookie)).phase, 'completing')
     const retry = await post('/store/checkout/action', {action:'complete'}, cookie)
     assert.match(retry.headers.get('location'), /uncertain/)
     assert.equal((await sessionFor(redis, cookie)).phase, 'completing')
