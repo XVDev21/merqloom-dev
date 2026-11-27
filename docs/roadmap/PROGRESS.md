@@ -65,3 +65,7 @@ Terra implemented the four-service workflow and recorded [disposable verificatio
 ## MQ-106 acceptance · November 27
 
 Sol accepted [PR #12](https://github.com/XVDev21/merqloom-dev/pull/12) at reviewed head `affa929ea837f36e0383f0a063dac6205d840cd2` and merged it at `5cbce5228458dc37aa30a4b22b1fad4c07e04f3d`. The retained Docker Desktop project now runs all four services with its original PostgreSQL and Redis containers and volumes. The [acceptance and rollout record](../verification/MQ-106.md#sol-acceptance-and-retained-desktop-rollout--november-27) documents the checked ports, data preservation, passing hosted jobs and remaining limits. MQ-105 remains the next M1 decision.
+
+## MQ-105 acceptance review release · November 27
+
+Sol releases [the M1 acceptance preparation](../handoffs/TERRA_MQ-105_M1_ACCEPTANCE.md) to Terra. The task covers the direct-flow walkthrough, current-baseline regression evidence, and narrow corrections for confirmed gate blockers. MQ-101 through MQ-104 and MQ-106 remain accepted. Sol retains the M1 decision and subsequent supplier release.

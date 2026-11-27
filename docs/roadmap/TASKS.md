@@ -44,7 +44,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-103 accepted. Gate: M1. Status: AC
 
 ## MQ-105: Direct-flow gate review
 
-Owner: Sol. Dependencies: MQ-101 through MQ-104. Gate: M1. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Sol. Evidence and scoped fixes: Terra. Dependencies: MQ-101 through MQ-104 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released M1 acceptance handoff](../handoffs/TERRA_MQ-105_M1_ACCEPTANCE.md).
 
 ## MQ-106: Full-stack Compose development
 
