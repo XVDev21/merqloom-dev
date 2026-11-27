@@ -1,6 +1,6 @@
 # Task ledger
 
-Updated 2026-11-26, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
+Updated 2026-11-27, Asia/Manila. M0 foundation tasks are accepted. Each M0 entry references the common publication record in docs/verification/M0_ACCEPTANCE.md. Each task requires tests, a verified remote SHA and review. Git states are independent of implementation states.
 
 ## MQ-001: Environment/upstream/repository preflight
 
@@ -48,7 +48,7 @@ Owner: Sol. Dependencies: MQ-101 through MQ-104. Gate: M1. Status: PLANNED. Git:
 
 ## MQ-106: Full-stack Compose development
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-104 accepted. Status: IN_REVIEW. Branch: `feat/MQ-106-full-stack-compose`. [Infrastructure handoff](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md) · [verification evidence](../verification/MQ-106.md). Uses the accepted direct-flow behavior as its regression baseline. Sol owns review and merge; MQ-105 retains its original dependencies.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-104 accepted. Status: ACCEPTED. Git: PUSHED and merged. Reviewed head: `affa929ea837f36e0383f0a063dac6205d840cd2`. Main merge: `5cbce5228458dc37aa30a4b22b1fad4c07e04f3d`. [PR #12](https://github.com/XVDev21/merqloom-dev/pull/12) · [Infrastructure handoff](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md) · [verification evidence](../verification/MQ-106.md). MQ-105 retains its original dependencies.
 
 ## MQ-201: Supplier schema and adapter
 
