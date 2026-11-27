@@ -69,3 +69,7 @@ Sol accepted [PR #12](https://github.com/XVDev21/merqloom-dev/pull/12) at review
 ## MQ-105 acceptance review release · November 27
 
 Sol releases [the M1 acceptance preparation](../handoffs/TERRA_MQ-105_M1_ACCEPTANCE.md) to Terra. The task covers the direct-flow walkthrough, current-baseline regression evidence, and narrow corrections for confirmed gate blockers. MQ-101 through MQ-104 and MQ-106 remain accepted. Sol retains the M1 decision and subsequent supplier release.
+
+## MQ-105 · M1 evidence review
+
+November 27, Manila. Terra traced one fictional direct-stock order from Studio and Store through simulated checkout, native Admin fulfillment and simulated shipment on a disposable stack. [M1 evidence](../verification/M1_ACCEPTANCE.md) records the matching totals, stock transitions, replay checks, scoped public-copy correction and remaining limits. Status: IN_REVIEW. Sol owns the independent review, M1 decision and merge; supplier work remains a separate release.

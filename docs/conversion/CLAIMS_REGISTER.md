@@ -4,8 +4,8 @@ Date: 2026-11-22. Status is scoped to the recorded surface and evidence. Origina
 
 MQ-CL-001. Hero: “A better shopping experience. A clearer way to run commerce.” HYPOTHESIS/POSITIONING. Source: project thesis. Not a comparative or measured result. Approved only with in-development context.
 MQ-CL-002. Development disclosure: independent demo with fictional products/payments/suppliers. VERIFIED as project scope, not working software. Must be visible near entry and checkout.
-MQ-CL-003. Product discovery and variant selection. VERIFIED for the MQ-102 demo catalog and product pages. Cart remains PLANNED for MQ-103.
-MQ-CL-004. Direct inventory/order visibility. PLANNED. Requires actual native order and inventory lifecycle evidence.
+MQ-CL-003. Product discovery and variant selection. VERIFIED for the MQ-102 demo catalog and product pages; native cart and simulated checkout were accepted in MQ-103.
+MQ-CL-004. Direct inventory/order visibility. VERIFIED for the fictional direct-stock demo by the accepted MQ-104 lifecycle; M1 acceptance remains with Sol.
 MQ-CL-005. Supplier coordination/import/synchronization. PLANNED. Requires M2 idempotent import and freshness tests; later label mock behavior SIMULATED.
 MQ-CL-006. Automation/retries. PLANNED. Requires durable worker and failure/restart evidence.
 MQ-CL-007. Accessible interaction/every screen. DESIGN INTENT, not conformance. Requires measured responsive, keyboard, contrast and motion evidence.
@@ -59,3 +59,7 @@ November 22, 2026, Manila · Sol · Astra review pending. The assumed fictional 
 ## MQ-103 checkout review
 
 November 23, 2026, Manila · Terra · Sol review pending. The fictional shopper can select an available direct-stock tray finish, manage a native cart and complete a simulated checkout. The Store displays Medusa's item subtotal, shipping, tax and total; a demo order is created in Medusa. Payment and shipping remain simulated. The pouch is a browse-only supplier preview. This supports the scoped Studio and roadmap wording in the MQ-103 branch, not a claim of live payments, actual delivery or completed manual fulfillment. [Day 6 evidence](../verification/DAY_06_2026-11-28.md)
+
+## MQ-105 M1 claim review
+
+November 27, 2026, Manila · Terra · IN_REVIEW. The assumed audience is an independent merchant or evaluator deciding what the fictional demo can show today. Their uncertainty is whether the Store order continues into merchant operations. The Studio now says, “The demo follows a direct-stock order from the Store through manual fulfillment in Admin”; the roadmap describes the direct demo as available and payment and shipping as simulated. The accepted [Day 7 lifecycle](../verification/DAY_07_2026-11-29.md) and current [M1 evidence](../verification/M1_ACCEPTANCE.md) support those bounded claims. The supplier path remains planned. This is not a claim of live payment, actual delivery, production readiness, or M1 acceptance; Sol owns the final M1 decision.
