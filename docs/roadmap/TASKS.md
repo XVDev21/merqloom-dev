@@ -48,7 +48,7 @@ Owner: Sol. Dependencies: MQ-101 through MQ-104. Gate: M1. Status: PLANNED. Git:
 
 ## MQ-106: Full-stack Compose development
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-104 accepted. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Infrastructure handoff](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md). Uses the accepted direct-flow behavior as its regression baseline. MQ-105 retains its original dependencies.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-104 accepted. Status: IN_REVIEW. Branch: `feat/MQ-106-full-stack-compose`. [Infrastructure handoff](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md) · [verification evidence](../verification/MQ-106.md). Uses the accepted direct-flow behavior as its regression baseline. Sol owns review and merge; MQ-105 retains its original dependencies.
 
 ## MQ-201: Supplier schema and adapter
 

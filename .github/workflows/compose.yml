@@ -1,0 +1,40 @@
+name: Compose full stack
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  containers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      COMPOSE_PROJECT_NAME: merqloom-ci-mq106
+      MEDUSA_DISABLE_TELEMETRY: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Prepare disposable configuration
+        run: ./scripts/local-env.sh
+      - name: Build portable runtime images
+        run: |
+          docker build --target backend-runtime -t merqloom-ci-backend:local .
+          docker build --target storefront-runtime -t merqloom-ci-storefront:local .
+      - name: Start disposable full stack
+        run: docker compose up -d --build --wait --wait-timeout 360
+      - name: Verify readiness and simulated checkout
+        run: |
+          ./scripts/compose-ready.sh
+          MERQLOOM_TEST_DISPOSABLE=yes node scripts/mq106-compose-smoke.mjs
+      - name: Sanitized diagnostics on failure
+        if: failure()
+        run: |
+          docker compose ps -a
+          node scripts/compose-diagnostics.mjs
+      - name: Remove only the CI project
+        if: always()
+        run: |
+          if [ -f .env ] && [ -f apps/backend/.env ]; then
+            docker compose -p merqloom-ci-mq106 down --volumes --remove-orphans
+          fi

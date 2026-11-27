@@ -26,6 +26,75 @@ services:
       interval: 3s
       timeout: 3s
       retries: 20
+  backend:
+    image: ${COMPOSE_PROJECT_NAME:-merqloom-dev}-workspace:local
+    build:
+      context: .
+      target: development
+    env_file:
+      - ./apps/backend/.env
+    environment:
+      # Medusa treats a Compose DNS name as remote unless local TLS is disabled.
+      DATABASE_URL: postgres://merqloom:${POSTGRES_PASSWORD:?Run the local setup script}@postgres:5432/merqloom?sslmode=disable
+      REDIS_URL: redis://redis:6379
+      MERQLOOM_LOOPBACK_HTTP: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "500"
+      HMR_PORT: "24678"
+      HMR_BIND_HOST: 0.0.0.0
+      HMR_HOST: 127.0.0.1
+      HMR_CLIENT_PORT: "19100"
+    command: ["sh", "/workspace/scripts/container/backend-dev.sh"]
+    ports:
+      - "127.0.0.1:19000:9000"
+      - "127.0.0.1:19100:24678"
+    volumes:
+      - ./apps/backend/src:/workspace/apps/backend/src
+      - ./apps/backend/medusa-config.ts:/workspace/apps/backend/medusa-config.ts:ro
+      - ./scripts/container:/workspace/scripts/container:ro
+      - store_bootstrap:/run/merqloom
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "/workspace/scripts/container/health-backend.cjs"]
+      interval: 10s
+      timeout: 8s
+      retries: 12
+      start_period: 180s
+  storefront:
+    image: ${COMPOSE_PROJECT_NAME:-merqloom-dev}-workspace:local
+    build:
+      context: .
+      target: development
+    environment:
+      MEDUSA_BACKEND_URL: http://backend:9000
+      MERQLOOM_REDIS_URL: redis://redis:6379
+      MERQLOOM_LOOPBACK_HTTP: "true"
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+    command: ["sh", "/workspace/scripts/container/storefront-dev.sh"]
+    ports:
+      - "127.0.0.1:18000:8000"
+    volumes:
+      - ./apps/storefront/src:/workspace/apps/storefront/src
+      - ./apps/storefront/public:/workspace/apps/storefront/public
+      - ./scripts/container:/workspace/scripts/container:ro
+      - store_bootstrap:/run/merqloom:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "/workspace/scripts/container/health-storefront.cjs"]
+      interval: 10s
+      timeout: 8s
+      retries: 12
+      start_period: 120s
 volumes:
   pgdata:
   redisdata:
+  store_bootstrap:

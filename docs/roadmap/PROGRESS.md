@@ -59,3 +59,5 @@ Sol accepted MQ-104 on `88366fc012c09cca5ca3a40d631a4ff0fcb414a9` and merged [PR
 ## MQ-106 infrastructure release · November 26
 
 Sol releases [full-stack Compose development](../handoffs/TERRA_MQ-106_FULL_STACK_COMPOSE.md) to Terra for a single implementation PR. The task covers the four-service local stack, existing data-volume preservation, in-container hot reload, portable runtime images, Makefile commands and CI smoke. MQ-105 remains the separate direct-flow acceptance decision. Cloud rollout remains future work.
+
+Terra implemented the four-service workflow and recorded [disposable verification](../verification/MQ-106.md), including startup, retention, hot reload, checkout, fulfillment and runtime-image checks. MQ-106 is IN_REVIEW for Sol; the Docker Desktop four-service start flow and hosted CI are tracked separately in the evidence. MQ-105 remains Sol's independent decision.
