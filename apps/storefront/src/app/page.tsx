@@ -18,7 +18,7 @@ const navigation = [
 const questions = [
   ["Is Merqloom available for production use?", "Merqloom is in development. The initial demonstration uses fictional products, sample data, and simulated transactions."],
   ["Does Merqloom support dropshipping?", "A fictional supplier workflow is planned. Live integrations depend on provider specifications, approval, and separate validation."],
-  ["Can Merqloom manage my own inventory?", "The foundation includes a seeded merchant stock location. The direct demo will verify order handling and manual fulfillment from that stock."],
+  ["Can Merqloom manage my own inventory?", "The demo uses a seeded merchant stock location. A direct-stock order can be fulfilled manually in Admin."],
   ["Does Merqloom process real payments?", "The demo checkout simulates payments and shipping. Production payments would require an approved provider and separate validation."],
   ["Will it work with different product categories?", "The catalog model supports product variants. The demo uses desk accessories, and other categories may have additional requirements."],
   ["Is it a replacement for Shopify or WooCommerce?", "Merqloom is an independent development project. Its current scope is a bounded commerce demonstration."],
@@ -66,7 +66,7 @@ export default function Studio() {
         <section id="platform" className={styles.platform}>
           <h2>Behind the storefront</h2>
           <p>When a shopper finds a product, the merchant still has to know whether it is available, where it will ship from, and who will handle the order when stock changes.</p>
-          <p>Merqloom’s design connects the public Store with merchant operations in native Medusa Admin. Medusa owns the catalog and inventory records. The planned demo follows an order from a Store product through fulfillment and back to its status in Admin.</p>
+          <p>Merqloom’s design connects the public Store with merchant operations in native Medusa Admin. Medusa owns the catalog and inventory records. The demo follows a direct-stock order from the Store through manual fulfillment in Admin.</p>
         </section>
       </div>
 
@@ -81,7 +81,7 @@ export default function Studio() {
           <section id="operations">
             <h2>Merchant operations</h2>
             <p>The local foundation uses native Medusa Admin as the authenticated merchant console. The demo is configured with sample products and merchant stock.</p>
-            <p>The direct-order milestone will verify order visibility and manual fulfillment. Later supplier work will add mapping, stock freshness, and a way for merchants to investigate failed imports or fulfillment requests.</p>
+            <p>The demo supports order visibility and manual fulfillment for direct stock. Later supplier work plans to add mapping, stock freshness, and a way for merchants to investigate failed imports or fulfillment requests.</p>
             <a href="#fulfillment">See the operations workflow</a>
           </section>
         </div>
@@ -90,12 +90,12 @@ export default function Studio() {
       <section id="fulfillment" className={`${styles.wrap} ${styles.section} ${styles.split}`}>
         <div>
           <h2>Two fulfillment paths</h2>
-          <p>Where the stock lives determines who will handle an order. Open either path to see what the current catalog shows and what the demo plans to verify.</p>
+          <p>Where the stock lives determines who will handle an order. Open either path to see what the demo supports and what remains planned.</p>
         </div>
         <div className={styles.disclosures}>
           <details>
             <summary><span>Direct inventory</span><span>Desk tray</span></summary>
-            <p>The sample desk tray uses merchant stock. The direct demo will follow three steps.</p>
+            <p>The sample desk tray uses merchant stock. The direct demo follows three steps.</p>
             <ol>
               <li>Browse the product and submit a simulated checkout.</li>
               <li>Find the order in Admin and fulfill it from the merchant’s stock location.</li>
@@ -118,15 +118,15 @@ export default function Studio() {
         <section id="journey" className={`${styles.wrap} ${styles.section} ${styles.split}`}>
           <div>
             <h2>The demo journey</h2>
-            <p>Today, the public journey reaches simulated checkout and creates a demo order in Medusa. Manual fulfillment and supplier processing remain later milestones.</p>
+            <p>Today, the public journey reaches simulated checkout and creates a demo order in Medusa. A direct-stock order can be manually fulfilled in Admin. Supplier processing remains planned.</p>
             <Link href="/store">Start with the demo catalog</Link>
           </div>
           <ol className={styles.steps}>
             <li><strong>Prepare the catalog.</strong> Set up products, variants, and stock in Medusa.</li>
             <li><strong>Publish to the Store.</strong> Visitors browse the two seeded products today.</li>
             <li><strong>Receive a demo order.</strong> Simulated checkout records the order in Medusa.</li>
-            <li><strong>Process fulfillment.</strong> The roadmap covers manual fulfillment first and the fictional supplier path after it.</li>
-            <li><strong>Review progress.</strong> Planned checks will trace order status, stock changes, and supplier exceptions.</li>
+            <li><strong>Process fulfillment.</strong> A merchant can manually fulfill a direct-stock demo order in Admin. The fictional supplier path remains planned.</li>
+            <li><strong>Review progress.</strong> The direct demo shows order status and stock changes. Supplier exceptions remain planned.</li>
           </ol>
         </section>
       </div>

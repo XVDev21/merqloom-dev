@@ -44,7 +44,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-103 accepted. Gate: M1. Status: AC
 
 ## MQ-105: Direct-flow gate review
 
-Owner: Sol. Evidence and scoped fixes: Terra. Dependencies: MQ-101 through MQ-104 accepted. Gate: M1. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released M1 acceptance handoff](../handoffs/TERRA_MQ-105_M1_ACCEPTANCE.md).
+Owner and reviewer: Sol. Evidence and scoped fixes: Terra. Dependencies: MQ-101 through MQ-104 accepted. Gate: M1. Status: ACCEPTED on merge of [PR #15](https://github.com/XVDev21/merqloom-dev/pull/15). Reviewed submission: `cc9be247bf8bf08e41717a82259e470ee37caf44`. [Sol acceptance and verification](../verification/M1_ACCEPTANCE.md#sol-acceptance--november-28) · [Released handoff](../handoffs/TERRA_MQ-105_M1_ACCEPTANCE.md).
 
 ## MQ-106: Full-stack Compose development
 
