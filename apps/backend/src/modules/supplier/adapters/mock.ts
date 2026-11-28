@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import type { SupplierAdapter, SupplierRejection } from './types'
+import { isUtcTimestamp } from '../time'
 
 type Fixture = { externalSku: string; title: string; quantity: number }
 const fixtures = new Map<string, Fixture[]>([
@@ -23,13 +24,6 @@ function validList<Item>(items: readonly Item[], isValidItem: (item: Item) => bo
 const reference = (supplierCode: string, requestKey: string) =>
   `MOCK-${createHash('sha256').update(JSON.stringify([supplierCode, requestKey])).digest('hex')}`
 
-function validUtc(value: unknown): value is string {
-  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?Z$/.test(value)) return false
-  const normalized = value.replace(/(?:\.(\d{1,3}))?Z$/, (_, fraction = '') => `.${fraction.padEnd(3, '0')}Z`)
-  const date = new Date(value)
-  return Number.isFinite(date.valueOf()) && date.toISOString() === normalized
-}
-
 export const mockSupplierAdapter: SupplierAdapter = {
   getCatalog(supplierCode) {
     if (!validText(supplierCode)) return rejected('INVALID_INPUT')
@@ -38,7 +32,7 @@ export const mockSupplierAdapter: SupplierAdapter = {
     return { ok: true, value: catalog.map(({ externalSku, title }) => ({ externalSku, title })) }
   },
   getInventory(input) {
-    if (!input || !validText(input.supplierCode) || !validUtc(input.observedAt) ||
+    if (!input || !validText(input.supplierCode) || !isUtcTimestamp(input.observedAt) ||
       !validList(input.externalSkus, validText)) return rejected('INVALID_INPUT')
     const catalog = fixtures.get(input.supplierCode)
     if (!catalog) return rejected('UNKNOWN_SUPPLIER')

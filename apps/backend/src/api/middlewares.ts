@@ -1,4 +1,4 @@
-import { defineMiddlewares, errorHandler, getHttpResponseFromError } from '@medusajs/framework/http'
+import { authenticate, defineMiddlewares, errorHandler, getHttpResponseFromError } from '@medusajs/framework/http'
 import type { MedusaNextFunction, MedusaRequest, MedusaResponse } from '@medusajs/framework/http'
 
 // Only fixed strings may leave this mapping: paths and query strings can contain
@@ -34,7 +34,13 @@ function attachDiagnostic(req: MedusaRequest, res: MedusaResponse) {
 const nativeErrorHandler = errorHandler()
 
 export default defineMiddlewares({
-  routes: [{ matcher: '/store/{*splat}', middlewares: [(req, res, next) => { attachDiagnostic(req, res); next() }] }],
+  routes: [
+    { matcher: '/store/{*splat}', middlewares: [(req, res, next) => { attachDiagnostic(req, res); next() }] },
+    { matcher: '/admin/supplier/imports', method:['POST'], bodyParser:{sizeLimit:'512kb'},
+      middlewares:[authenticate('user', ['session','bearer'])] },
+    { matcher: '/admin/supplier/imports/:id', method:['GET'],
+      middlewares:[authenticate('user', ['session','bearer'])] },
+  ],
   errorHandler: (error: unknown, req: MedusaRequest, res: MedusaResponse, next: MedusaNextFunction) => {
     if (req.originalUrl.startsWith('/store/')) attachDiagnostic(req, res)
     if (req.scope) { nativeErrorHandler(error, req, res, next); return }

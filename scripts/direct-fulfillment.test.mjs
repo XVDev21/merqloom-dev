@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { test } from 'node:test'
 import { parseEnv } from 'node:util'
+import { createOperator } from './native-admin-test-helper.mjs'
 
 const require = createRequire(new URL('../apps/storefront/package.json', import.meta.url))
 const { Client } = require('pg'), Redis = require('ioredis')
@@ -17,25 +18,6 @@ function fixture(action, suffix) {
   execFileSync('pnpm', ['--dir', 'apps/backend', 'exec', 'medusa', 'exec', './src/scripts/mq104-test-fixture.ts'], {
     env:{...process.env, MEDUSA_DISABLE_TELEMETRY:'true', MQ104_FIXTURE_ACTION:action, MQ104_FIXTURE_SUFFIX:suffix}, stdio:'ignore', timeout:60000,
   })
-}
-
-async function createOperator(db, email, password) {
-  // The supported CLI creates an invite; the test keeps auth material out of argv and logs.
-  try {
-    execFileSync('pnpm', ['--dir','apps/backend','exec','medusa','user','--invite','--email',email], {
-      env:{...process.env, MEDUSA_DISABLE_TELEMETRY:'true'}, stdio:'ignore', timeout:60000,
-    })
-    const invite = await db.query('select token from invite where email=$1 and deleted_at is null', [email])
-    assert.equal(invite.rows.length, 1)
-    const registered = await fetch(`${store.MEDUSA_BACKEND_URL}/auth/user/emailpass/register`, {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({email,password})})
-    assert.equal(registered.status, 200)
-    const {token} = await registered.json()
-    assert.ok(token)
-    const accepted = await fetch(`${store.MEDUSA_BACKEND_URL}/admin/invites/accept?${new URLSearchParams({token:invite.rows[0].token})}`, {
-      method:'POST', headers:{authorization:`Bearer ${token}`, 'content-type':'application/json'}, body:JSON.stringify({email,first_name:'Demo',last_name:'Operator'}),
-    })
-    assert.equal(accepted.status, 200)
-  } catch { throw new Error('Disposable native operator setup failed') }
 }
 
 async function storeGet(path) {
@@ -56,11 +38,7 @@ test('direct inventory is reserved, fulfilled and shipped once through authentic
     await db.connect()
     fixtureStarted = true
     fixture('create', suffix)
-    await createOperator(db, email, password)
-    const login = await fetch(`${store.MEDUSA_BACKEND_URL}/auth/user/emailpass`, {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({email,password})})
-    assert.equal(login.status, 200, 'disposable native operator authenticated')
-    const {token} = await login.json()
-    assert.ok(token)
+    const token = await createOperator(db, store.MEDUSA_BACKEND_URL, email, password)
     const admin = (path, body, authenticated = true) => fetch(`${store.MEDUSA_BACKEND_URL}/admin/${path}`, {
       method:body ? 'POST' : 'GET', headers:{'content-type':'application/json', ...(authenticated && {authorization:`Bearer ${token}`})}, ...(body && {body:JSON.stringify(body)}),
     })

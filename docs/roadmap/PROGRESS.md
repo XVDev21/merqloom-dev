@@ -93,3 +93,11 @@ Sol accepts the supplier schema and offline adapter on merge of [PR #18](https:/
 ## MQ-202 release · November 28
 
 Sol releases [MQ-202 to Terra](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNESS.md) from accepted MQ-201 and marks it READY. The contract covers bounded authenticated CSV import, stable mapping and audit, native supplier-location stock and fail-closed freshness. The existing Store preview stays browse-only while MQ-203 awaits a separate release for gated supplier checkout and durable processing. The December 7 demo target remains in the daily roadmap.
+
+## MQ-202 · Supplier import and freshness review
+
+November 28, Manila. Terra implemented bounded authenticated import, durable import identity and audit, isolated native supplier stock, compensating recovery and a fail-closed freshness decision. [Verification](../verification/MQ-202.md) records disposable migration, stock, authorization and regression evidence. Status: IN_REVIEW on [PR #20](https://github.com/XVDev21/merqloom-dev/pull/20). Sol owns review and merge; supplier checkout and durable fulfillment remain MQ-203.
+
+## MQ-202 acceptance · November 28
+
+Sol accepts supplier import and freshness on merge of [PR #20](https://github.com/XVDev21/merqloom-dev/pull/20). The independent review reproduced and fixed an unsupported supplier SKU being able to claim the preview variant. The [acceptance record](../verification/MQ-202.md#sol-acceptance--november-28) documents the failure, the no-write rejection after the fix and the succeeding valid import. MQ-203 remains planned and awaits its handoff.

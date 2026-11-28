@@ -2,8 +2,10 @@ import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import { test } from 'node:test'
 
-const require = createRequire(import.meta.url)
-const adapter = () => require('../apps/backend/src/modules/supplier/adapters/mock.ts').mockSupplierAdapter
+process.env.TS_NODE_PROJECT = new URL('../apps/backend/tsconfig.json', import.meta.url).pathname
+const require = createRequire(new URL('../apps/backend/package.json', import.meta.url))
+require('ts-node/register/transpile-only')
+const adapter = () => require('./src/modules/supplier/adapters/mock.ts').mockSupplierAdapter
 const north = 'fictional-north'
 const south = 'fictional-south'
 const observedAt = '2026-11-28T00:00:00.000Z'
@@ -29,6 +31,8 @@ test('inventory preserves supplied time and distinguishes zero stock from an unk
     {externalSku:'POUCH-ZERO', quantity:0, observedAt},
   ]})
   assert.deepEqual(adapter().getInventory({...input, observedAt:'not-utc'}), {ok:false, reason:'INVALID_INPUT'})
+  assert.equal(adapter().getInventory({...input, observedAt:'2026-11-28T00:00:00.123456Z'}).ok, true)
+  assert.deepEqual(adapter().getInventory({...input, observedAt:`2026-11-28T00:00:00.${'1'.repeat(1024)}Z`}), {ok:false, reason:'INVALID_INPUT'})
   assert.deepEqual(adapter().getInventory({...input, observedAt:'2026-02-30T00:00:00.000Z'}), {ok:false, reason:'INVALID_INPUT'})
   assert.deepEqual(adapter().getInventory({...input, externalSkus:Array(101).fill('POUCH-NATURAL')}), {ok:false, reason:'INVALID_INPUT'})
   const sparseSkus = new Array(2)
