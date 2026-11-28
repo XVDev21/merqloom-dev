@@ -81,3 +81,7 @@ Sol accepts MQ-105 and closes the M1 gate on merge of [PR #15](https://github.co
 ## MQ-201 release · November 28
 
 Sol releases [MQ-201 to Terra](../handoffs/TERRA_MQ-201_SUPPLIER_SCHEMA_ADAPTER.md) from the accepted M1 baseline and records it as READY. The implementation covers the supplier module, unique SKU mapping, native variant association and deterministic offline adapter. The [engineering tracker](TASKS.md#engineering-improvements) assigns MQ-301 baselines and MQ-401 predeployment acceptance. ENG-001 remains a separate global skill assessment. The December 7 MVP target remains in the daily roadmap.
+
+## MQ-201 · Supplier schema and adapter review
+
+November 28, Manila. Terra implemented the supplier identity and unique SKU mapping, native variant link and offline mock adapter. [Verification](../verification/MQ-201.md) records fresh and upgrade migrations, concurrent uniqueness, link compensation, adapter and M1 checks. Status: IN_REVIEW. Sol owns review and merge. Supplier import, freshness, checkout, durable processing and Admin remain later tasks.
