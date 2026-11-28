@@ -1,5 +1,7 @@
 # Full Proposed Landing Page: Merqloom Studio
 
+This original copy is a historical reference. Use the [public experience brief](../docs/design/PUBLIC_EXPERIENCE.md) for current content direction and publication requirements.
+
 **Status:** Proposed original copy for a demonstration, not evidence of implemented features. Verify all claims and CTAs before publication. Apply `commerce-conversion-strategy`, `design-taste-frontend`, and `design-motion-principles` during implementation.
 
 ## 11. Merqloom Studio landing-page copy: complete draft

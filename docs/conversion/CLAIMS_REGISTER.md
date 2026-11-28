@@ -1,5 +1,11 @@
 # Claims register
 
+## Current public claim policy
+
+Sol owns approval of new copy. Use the [public experience brief](../design/PUBLIC_EXPERIENCE.md#claim-boundaries) to scope claims for the audience and surface. The accepted direct demo covers catalog browsing, finish selection, cart, simulated checkout and authenticated manual fulfillment. [MQ-202](../verification/MQ-202.md) adds authenticated fictional supplier CSV import and stock freshness. The public supplier pouch remains a catalog preview at the MQ-202 baseline. Use the working Store demo as the public action. Development status and dates below are historical or internal material.
+
+## Historical claim decisions
+
 Date: 2026-11-22. Status is scoped to the recorded surface and evidence. Original full copy is retained in ../../content/MERQLOOM_STUDIO_COMPLETE_LANDING_PAGE_COPY.md.
 
 MQ-CL-001. Hero: “A better shopping experience. A clearer way to run commerce.” HYPOTHESIS/POSITIONING. Source: project thesis. Not a comparative or measured result. Approved only with in-development context.

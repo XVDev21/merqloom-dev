@@ -60,7 +60,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-201 accepted. Gate: M2. Status: AC
 
 ## MQ-203: Durable mock fulfillment/retries
 
-Owner: Terra. Dependencies: MQ-202. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. The later release covers gated supplier checkout as the prerequisite for the durable mock fulfillment journey.
+Owner: Terra. Dependencies: MQ-202 accepted. Gate: M2. Status: ON_HOLD by owner direction while public frontend work takes priority. Wait for a separate release to resume. The later release covers gated supplier checkout as the prerequisite for the durable mock fulfillment journey.
 
 ## MQ-204: Authorized supplier Admin extension
 
@@ -98,6 +98,14 @@ Owner and release reviewer: Sol. Gate: before public deployment. Dependencies: M
 | API rate limiting and resource protection | Terra, MQ-202. Verify supplier file, row, field and batch limits. MQ-301 reviews request cost and checkout lease/recovery behavior where applicable. | Verify ingress body, rate and timeout budgets, expected 413 and 429 responses, normal checkout and restricted origin exposure on the selected hosting topology. Close any outstanding lease or crash-recovery evidence required for that topology. |
 | Dedicated k6 load testing | Terra, MQ-301 if the schedule allows. Keep a short, opt-in hosted HTTP smoke on synthetic disposable data outside routine tests. | Deliver any outstanding k6 smoke and run a bounded staging workload on synthetic data. Attach the workload, endpoint p95, error and dropped-iteration results against approved budgets and confirm expected commerce state. |
 | Code health and dependencies | Apply [engineering standards](../../AGENTS.md#engineering-standards) on each M2/M3 change. Verify duplication and unused dependency candidates in focused changes when justified. | Review remaining dependency advisories and confirmed cleanup risks. Prove any manifest removal with a frozen install, builds and affected regressions. Record any retained findings and their disposition. |
+
+## UX-001: Public product copy and routing
+
+Owner Terra. Reviewer Sol. Status READY on publication of the [released handoff](../handoffs/TERRA_UX-001_PUBLIC_COPY_AND_ROUTING.md) on `main`. Dependencies MQ-202 accepted. Revise copy and metadata across Studio and Store, remove public roadmap navigation and redirect the old path to Studio. Preserve demo access, disclosures and commerce behavior. Verify the public copy and route changes with scoped browser and text checks. This is Terra's next assignment while MQ-203 is on hold.
+
+## UX-002: Shared frontend design and brand
+
+Owner Terra. Reviewer Sol. Status PLANNED pending visual approval. Depends on UX-001 and the approved [design direction](../design/PUBLIC_EXPERIENCE.md#proposed-visual-direction). Review the mark, Studio and shared shell first, then catalog, product details, cart and checkout states. Verify relevant commerce journeys and coordinate mobile lab baselines with MQ-301. Include accepted visual work in MQ-302 as capacity permits. Preserve the December 7 MVP gate.
 
 ## ENG-001: Global engineering-excellence skill assessment
 

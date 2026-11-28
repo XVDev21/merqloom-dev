@@ -10,7 +10,7 @@ Shopper persona: fictional shopper evaluating dimensions, variants, availability
 
 ## Must have
 
-1. Studio at the public root: complete truthful product story, roadmap, functional links and development disclosure.
+1. Studio at the public root presents verified product capabilities and a working demo entry. Keep engineering schedules and status in the repository. Disclose simulated transactions at the relevant decisions. Follow the [public experience brief](../design/PUBLIC_EXPERIENCE.md).
 2. Store: at least two synthetic lifestyle SKUs, native product variants/prices, catalog, simple supported search/filter, product detail, cart and simulated checkout.
 3. Direct flow: product to cart to a real Medusa demo order, then supported manual fulfillment visible in Admin with observed inventory behavior.
 4. Supplier flow: validated fictional CSV to mapping to native catalog and inventory to separate supplier order to durable mock processing to status and retry visibility in Admin.

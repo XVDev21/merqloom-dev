@@ -1,5 +1,7 @@
 # Design system foundation
 
+The [public experience brief](PUBLIC_EXPERIENCE.md) defines the current public content policy and proposed visual direction. The foundation below records the accepted M0/M1 decisions and the starting tokens. Use the new brief when preparing future frontend handoffs.
+
 M0 applies the foundation tokens and text hierarchy to the entry page and catalog. The full M1 design direction below remains provisional.
 
 ## Subject and argument
