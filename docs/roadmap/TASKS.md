@@ -56,7 +56,7 @@ Architecture and review: Sol. Implementation: Terra. Dependencies: M1 accepted. 
 
 ## MQ-202: Idempotent CSV import/mapping/freshness
 
-Owner: Terra. Reviewer: Sol. Dependencies: MQ-201 accepted. Gate: M2. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released CSV import and freshness handoff](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNESS.md).
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-201 accepted. Gate: M2. Status: IN_REVIEW. Branch: `feat/MQ-202-supplier-import-freshness`. [Verification](../verification/MQ-202.md). [Released CSV import and freshness handoff](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNESS.md).
 
 ## MQ-203: Durable mock fulfillment/retries
 
