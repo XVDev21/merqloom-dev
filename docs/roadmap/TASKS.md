@@ -52,7 +52,7 @@ Owner: Terra. Reviewer: Sol. Dependencies: MQ-104 accepted. Status: ACCEPTED. Gi
 
 ## MQ-201: Supplier schema and adapter
 
-Architecture and review: Sol. Implementation: Terra. Dependencies: M1 accepted. Gate: M2. Status: IN_REVIEW. Branch: `feat/MQ-201-supplier-schema-adapter`. [Verification](../verification/MQ-201.md) · [Released handoff](../handoffs/TERRA_MQ-201_SUPPLIER_SCHEMA_ADAPTER.md). Sol owns review and merge.
+Architecture and review: Sol. Implementation: Terra. Dependencies: M1 accepted. Gate: M2. Status: ACCEPTED on merge of [PR #18](https://github.com/XVDev21/merqloom-dev/pull/18). [Sol acceptance and verification](../verification/MQ-201.md#sol-acceptance--november-28) · [Released handoff](../handoffs/TERRA_MQ-201_SUPPLIER_SCHEMA_ADAPTER.md).
 
 ## MQ-202: Idempotent CSV import/mapping/freshness
 

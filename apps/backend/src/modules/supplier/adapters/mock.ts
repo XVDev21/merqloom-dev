@@ -13,7 +13,13 @@ const fixtures = new Map<string, Fixture[]>([
 const rejected = (reason: SupplierRejection) => ({ ok: false as const, reason })
 const validText = (value: unknown, limit = 128): value is string =>
   typeof value === 'string' && value.length <= limit && value.trim().length > 0
-const validList = (value: unknown): value is unknown[] => Array.isArray(value) && value.length <= 100
+function validList<Item>(items: readonly Item[], isValidItem: (item: Item) => boolean): boolean {
+  if (!Array.isArray(items) || items.length > 100) return false
+  for (let index = 0; index < items.length; index++) {
+    if (!Object.prototype.hasOwnProperty.call(items, index) || !isValidItem(items[index])) return false
+  }
+  return true
+}
 const reference = (supplierCode: string, requestKey: string) =>
   `MOCK-${createHash('sha256').update(JSON.stringify([supplierCode, requestKey])).digest('hex')}`
 
@@ -33,7 +39,7 @@ export const mockSupplierAdapter: SupplierAdapter = {
   },
   getInventory(input) {
     if (!input || !validText(input.supplierCode) || !validUtc(input.observedAt) ||
-      !validList(input.externalSkus) || !input.externalSkus.every(sku => validText(sku))) return rejected('INVALID_INPUT')
+      !validList(input.externalSkus, validText)) return rejected('INVALID_INPUT')
     const catalog = fixtures.get(input.supplierCode)
     if (!catalog) return rejected('UNKNOWN_SUPPLIER')
     const requested = new Set(input.externalSkus)
@@ -42,9 +48,10 @@ export const mockSupplierAdapter: SupplierAdapter = {
   },
   submitFulfillment(input) {
     if (!input || !validText(input.supplierCode) || !validText(input.requestKey, 200) ||
-      !validList(input.lines) || input.lines.length === 0 || !input.lines.every(line =>
-        line && typeof line === 'object' && validText(line.externalSku) &&
-        Number.isSafeInteger(line.quantity) && line.quantity > 0)) return rejected('INVALID_INPUT')
+      !validList(input.lines, line =>
+        line !== null && typeof line === 'object' && validText(line.externalSku) &&
+        Number.isSafeInteger(line.quantity) && line.quantity > 0) ||
+      input.lines.length === 0) return rejected('INVALID_INPUT')
     const catalog = fixtures.get(input.supplierCode)
     if (!catalog) return rejected('UNKNOWN_SUPPLIER')
     if (input.lines.some(line => !catalog.some(item => item.externalSku === line.externalSku))) return rejected('UNKNOWN_SKU')

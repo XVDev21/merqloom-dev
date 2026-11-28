@@ -31,6 +31,9 @@ test('inventory preserves supplied time and distinguishes zero stock from an unk
   assert.deepEqual(adapter().getInventory({...input, observedAt:'not-utc'}), {ok:false, reason:'INVALID_INPUT'})
   assert.deepEqual(adapter().getInventory({...input, observedAt:'2026-02-30T00:00:00.000Z'}), {ok:false, reason:'INVALID_INPUT'})
   assert.deepEqual(adapter().getInventory({...input, externalSkus:Array(101).fill('POUCH-NATURAL')}), {ok:false, reason:'INVALID_INPUT'})
+  const sparseSkus = new Array(2)
+  sparseSkus[0] = 'POUCH-ZERO'
+  assert.deepEqual(adapter().getInventory({...input, externalSkus:sparseSkus}), {ok:false, reason:'INVALID_INPUT'})
   assert.deepEqual(adapter().getInventory({...input, supplierCode:'unknown'}), {ok:false, reason:'UNKNOWN_SUPPLIER'})
 })
 
@@ -54,6 +57,7 @@ test('invalid fulfillment input and unknown SKU are rejected without acceptance'
   const input = {supplierCode:north, requestKey:'request-1', lines:[{externalSku:'POUCH-NATURAL', quantity:1}]}
   for (const invalid of [
     {...input, requestKey:''}, {...input, lines:[]},
+    {...input, lines:new Array(1)},
     {...input, lines:[{externalSku:'POUCH-NATURAL', quantity:0}]},
     {...input, lines:[{externalSku:'POUCH-NATURAL', quantity:1.5}]},
     {...input, lines:[{externalSku:'POUCH-NATURAL', quantity:Number.MAX_SAFE_INTEGER + 1}]},

@@ -85,3 +85,7 @@ Sol releases [MQ-201 to Terra](../handoffs/TERRA_MQ-201_SUPPLIER_SCHEMA_ADAPTER.
 ## MQ-201 · Supplier schema and adapter review
 
 November 28, Manila. Terra implemented the supplier identity and unique SKU mapping, native variant link and offline mock adapter. [Verification](../verification/MQ-201.md) records fresh and upgrade migrations, concurrent uniqueness, link compensation, adapter and M1 checks. Status: IN_REVIEW. Sol owns review and merge. Supplier import, freshness, checkout, durable processing and Admin remain later tasks.
+
+## MQ-201 acceptance · November 28
+
+Sol accepts the supplier schema and offline adapter on merge of [PR #18](https://github.com/XVDev21/merqloom-dev/pull/18). The independent review found and corrected sparse-list validation in the mock adapter. The [acceptance record](../verification/MQ-201.md#sol-acceptance--november-28) includes the reproducing and passing cases. MQ-202 is the next planned task and awaits its handoff.
