@@ -77,3 +77,7 @@ November 27, Manila. Terra traced one fictional direct-stock order from Studio a
 ## MQ-105 · M1 acceptance · November 28
 
 Sol accepts MQ-105 and closes the M1 gate on merge of [PR #15](https://github.com/XVDev21/merqloom-dev/pull/15). The [acceptance record](../verification/M1_ACCEPTANCE.md#sol-acceptance--november-28) records the independent review, the simulated PHP 460 order, direct-stock fulfillment, inventory and retry evidence, and the limits carried forward. MQ-201, supplier schema and adapter, is the next planned task and awaits its own handoff.
+
+## MQ-201 release · November 28
+
+Sol releases [MQ-201 to Terra](../handoffs/TERRA_MQ-201_SUPPLIER_SCHEMA_ADAPTER.md) from the accepted M1 baseline and records it as READY. The implementation covers the supplier module, unique SKU mapping, native variant association and deterministic offline adapter. The [engineering tracker](TASKS.md#engineering-improvements) assigns MQ-301 baselines and MQ-401 predeployment acceptance. ENG-001 remains a separate global skill assessment. The December 7 MVP target remains in the daily roadmap.
