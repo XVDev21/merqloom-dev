@@ -74,6 +74,8 @@ Owner: Sol. Dependencies: MQ-201 through MQ-204. Gate: M2. Status: PLANNED. Git:
 
 Owner: Terra. Reviewer: Sol. Dependencies: M2 accepted. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
 
+Performance baseline. Use a production build and a disposable stack with synthetic data. Capture a mobile lab baseline for Studio, catalog and product detail. Count catalog and checkout requests with one and multiple cart lines. Record the revision, fixture size, run conditions and results. If the schedule allows, add a short opt-in hosted k6 smoke outside the routine test suite. Use the baseline to decide whether tuning is warranted.
+
 ## MQ-302: Repeatable demo and portfolio evidence
 
 Owner: Terra. Reviewer: Sol. Dependencies: MQ-301. Gate: M3. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
