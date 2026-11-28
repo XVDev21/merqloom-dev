@@ -6,6 +6,8 @@ Sol owns architecture, task release, technical review, acceptance and authorized
 
 Review the PRD, ADRs, task ledger and local runbook first. Record checks, screenshots, exact SHA, CI and outstanding defects. Keep credentials, merchant data and private research outside Git. Astra's acceptance records and Sol's implementation handoffs through MQ-102 document the previous workflow.
 
+For public-facing work and future frontend handoffs, follow the [public experience brief](docs/design/PUBLIC_EXPERIENCE.md) and use the [claims register](docs/conversion/CLAIMS_REGISTER.md) to verify copy. The working demo is the primary activation path. Keep development tracking in the repository and disclose simulations at the point of decision.
+
 ## Engineering standards
 
 - Keep changes focused and readable. Use the simplest supported approach and check the project's pinned framework and existing helpers first. Use descriptive names and remove unused declarations, unnecessary state and repeated work in changed paths. Share business rules when callers need the same behavior. Keep unrelated cleanup in its own change.

@@ -101,3 +101,7 @@ November 28, Manila. Terra implemented bounded authenticated import, durable imp
 ## MQ-202 acceptance · November 28
 
 Sol accepts supplier import and freshness on merge of [PR #20](https://github.com/XVDev21/merqloom-dev/pull/20). The independent review reproduced and fixed an unsupported supplier SKU being able to claim the preview variant. The [acceptance record](../verification/MQ-202.md#sol-acceptance--november-28) documents the failure, the no-write rejection after the fix and the succeeding valid import. MQ-203 remains planned and awaits its handoff.
+
+## UX-001 release · November 28
+
+The owner prioritizes the public frontend. Sol releases [UX-001 to Terra](../handoffs/TERRA_UX-001_PUBLIC_COPY_AND_ROUTING.md) on publication of this handoff on `main`. UX-001 covers public copy and the roadmap redirect while preserving the accepted demo. MQ-203 is on hold until the owner resumes supplier work. UX-002 remains a separate release for the visual redesign and brand assets.
