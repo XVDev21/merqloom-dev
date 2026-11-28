@@ -34,8 +34,9 @@ export async function preflightImport(container:MedusaContainer, supplierId:stri
   const db = database(container), query = container.resolve(ContainerRegistrationKeys.QUERY)
   const plan:ImportPlanItem[] = []
   for (const row of rows) {
-    // MQ-202 admits only the released fictional supplier fixture.
+    // This fixture's native variant must resolve to the SKU the mock supplier fulfills.
     if (row.variantSku !== 'MQ-SUPPLIER-POUCH') throw new ImportRejected('VARIANT_UNAVAILABLE', row.row)
+    if (row.externalSku !== 'POUCH-NATURAL') throw new ImportRejected('SUPPLIER_SKU_UNAVAILABLE', row.row)
     const {data:variants} = await query.graph({entity:'product_variant', fields:['id','sku','manage_inventory','product.metadata'], filters:{sku:row.variantSku}})
     if (variants.length !== 1 || !variants[0].manage_inventory || variants[0].product?.metadata?.source !== 'supplier' ||
       variants[0].product?.metadata?.synthetic !== true) throw new ImportRejected('VARIANT_UNAVAILABLE', row.row)

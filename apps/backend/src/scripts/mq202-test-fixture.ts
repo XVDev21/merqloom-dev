@@ -48,12 +48,22 @@ export default async function supplierImportFixture({container}: {container:Medu
     }
     const [existingMapping] = await supplierService.listSupplierMappings({supplier_id:supplier.id, external_sku:'POUCH-NATURAL'})
     if (!existingMapping) {
+      const assertNoSupplierWrites = async () => {
+        assert.equal((await supplierService.listSupplierMappings({supplier_id:supplier.id})).length, 0)
+        assert.equal((await inventory.listInventoryLevels({inventory_item_id:itemId, location_id:location.id})).length, 0)
+        const {rows:[counts]} = await db.query(
+          'select (select count(*)::int from product_product_variant_supplier_supplier_mapping where product_variant_id=$1 and deleted_at is null) as links, (select count(*)::int from supplier_observation) as observations',
+          [variant.id],
+        )
+        assert.deepEqual(counts, {links:0, observations:0})
+      }
+      const wrongSku = await run(`wrong-sku-${suffix}`, csv.replace('POUCH-NATURAL', 'POUCH-NOT-IN-ADAPTER'))
+      assert.equal(wrongSku.httpStatus, 422, 'an unsupported supplier SKU is rejected on fresh data')
+      assert.equal(wrongSku.run?.error?.code, 'SUPPLIER_SKU_UNAVAILABLE')
+      await assertNoSupplierWrites()
       const rolledBack = await withObservationFailure(() => run(`new-mapping-failure-${suffix}`))
       assert.equal(rolledBack.run?.status, 'failed')
-      assert.equal((await supplierService.listSupplierMappings({supplier_id:supplier.id, external_sku:'POUCH-NATURAL'})).length, 0)
-      assert.equal((await inventory.listInventoryLevels({inventory_item_id:itemId, location_id:location.id})).length, 0)
-      const links = await db.query('select count(*)::int as n from product_product_variant_supplier_supplier_mapping where product_variant_id=$1 and deleted_at is null', [variant.id])
-      assert.equal(links.rows[0].n, 0, 'new mapping, link and stock are all compensated')
+      await assertNoSupplierWrites()
     }
     const first = await run(`first-${suffix}`)
     assert.equal(first.httpStatus, 200)
@@ -122,12 +132,11 @@ export default async function supplierImportFixture({container}: {container:Medu
     assert.equal(Number((await inventory.listInventoryLevels({id:level.id}))[0].stocked_quantity), 6)
     const timestampConflict = await run(`timestamp-conflict-${suffix}`, `${header}\nPOUCH-NATURAL,MQ-SUPPLIER-POUCH,7,${observedAt}\n`)
     assert.equal(timestampConflict.run?.error?.code, 'TIMESTAMP_CONFLICT')
-    await db.query('insert into supplier_mapping (id,supplier_id,external_sku,deleted_at) values ($1,$2,$3,now())',
-      [`smap_deleted_${suffix}`,supplier.id,`DELETED-${suffix}`])
+    await db.query('update supplier_mapping set deleted_at=now() where id=$1', [mapping.id])
     try {
-      const deleted = await run(`deleted-${suffix}`, `${header}\nDELETED-${suffix},MQ-SUPPLIER-POUCH,7,${observedAt}\n`)
+      const deleted = await run(`deleted-${suffix}`, csv)
       assert.equal(deleted.run?.error?.code, 'MAPPING_RECONCILIATION')
-    } finally { await db.query('delete from supplier_mapping where id=$1', [`smap_deleted_${suffix}`]) }
+    } finally { await db.query('update supplier_mapping set deleted_at=null where id=$1', [mapping.id]) }
     const newer = new Date().toISOString()
     const corrected = await run(`corrected-${suffix}`, `${header}\nPOUCH-NATURAL,MQ-SUPPLIER-POUCH,0,${newer}\n`)
     assert.equal(corrected.run?.status, 'succeeded')
