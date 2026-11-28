@@ -96,4 +96,4 @@ Sol releases [MQ-202 to Terra](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNES
 
 ## MQ-202 · Supplier import and freshness review
 
-November 28, Manila. Terra implemented bounded authenticated import, durable import identity and audit, isolated native supplier stock, compensating recovery and a fail-closed freshness decision. [Verification](../verification/MQ-202.md) records disposable migration, stock, authorization and regression evidence. Status: IN_REVIEW. Sol owns review and merge; supplier checkout and durable fulfillment remain MQ-203.
+November 28, Manila. Terra implemented bounded authenticated import, durable import identity and audit, isolated native supplier stock, compensating recovery and a fail-closed freshness decision. [Verification](../verification/MQ-202.md) records disposable migration, stock, authorization and regression evidence. Status: IN_REVIEW on [PR #20](https://github.com/XVDev21/merqloom-dev/pull/20). Sol owns review and merge; supplier checkout and durable fulfillment remain MQ-203.
