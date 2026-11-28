@@ -56,11 +56,11 @@ Architecture and review: Sol. Implementation: Terra. Dependencies: M1 accepted. 
 
 ## MQ-202: Idempotent CSV import/mapping/freshness
 
-Owner: Terra. Dependencies: MQ-201. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Reviewer: Sol. Dependencies: MQ-201 accepted. Gate: M2. Status: READY. Implementation Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. [Released CSV import and freshness handoff](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNESS.md).
 
 ## MQ-203: Durable mock fulfillment/retries
 
-Owner: Terra. Dependencies: MQ-202. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none.
+Owner: Terra. Dependencies: MQ-202. Gate: M2. Status: PLANNED. Git: NOT_COMMITTED. Branch/SHA/PR/CI: none. The later release covers gated supplier checkout as the prerequisite for the durable mock fulfillment journey.
 
 ## MQ-204: Authorized supplier Admin extension
 

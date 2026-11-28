@@ -89,3 +89,7 @@ November 28, Manila. Terra implemented the supplier identity and unique SKU mapp
 ## MQ-201 acceptance · November 28
 
 Sol accepts the supplier schema and offline adapter on merge of [PR #18](https://github.com/XVDev21/merqloom-dev/pull/18). The independent review found and corrected sparse-list validation in the mock adapter. The [acceptance record](../verification/MQ-201.md#sol-acceptance--november-28) includes the reproducing and passing cases. MQ-202 is the next planned task and awaits its handoff.
+
+## MQ-202 release · November 28
+
+Sol releases [MQ-202 to Terra](../handoffs/TERRA_MQ-202_SUPPLIER_IMPORT_FRESHNESS.md) from accepted MQ-201 and marks it READY. The contract covers bounded authenticated CSV import, stable mapping and audit, native supplier-location stock and fail-closed freshness. The existing Store preview stays browse-only while MQ-203 awaits a separate release for gated supplier checkout and durable processing. The December 7 demo target remains in the daily roadmap.
