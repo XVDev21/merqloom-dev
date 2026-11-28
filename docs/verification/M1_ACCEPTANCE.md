@@ -1,6 +1,6 @@
 # MQ-105 · M1 acceptance evidence
 
-Terra · November 27, 2026 (Asia/Manila) · **IN_REVIEW**. Sol owns the independent M1 decision and merge. This packet records a fictional local demo; payment and shipping are simulated, and supplier processing remains planned.
+**M1 accepted by Sol on merge of PR #15.** Terra submitted the evidence below on November 27, 2026 (Asia/Manila). The local demo uses fictional data and simulated payment and shipping. Supplier processing remains planned.
 
 ## Release, scope and isolation
 
@@ -93,4 +93,10 @@ The first pushed review head was `5ff844fe0777acf1f5e1a9435e124a7b80daa548`. [Fo
 
 ## Remaining limits
 
-The native Admin shipping-subtotal markup warning recorded in Day 7 remains an upstream UI defect; the order workflow was usable. Native Medusa's HTTP 409 in-progress branch was not observed; the accepted tests cover supported concurrent requests and application busy/retry behavior. Redis crash durability was not tested. With JavaScript disabled, a server-rejected edit still reports the field error and requires re-review but discards unsaved field values. Sanitized diagnostics deliberately omit dynamic framework detail. These are review inputs for Sol, not a new M1 acceptance decision. Real payment, actual shipping, supplier workflows, production deployment and infrastructure changes are outside this packet.
+The native Admin shipping-subtotal markup warning recorded in Day 7 remains an upstream UI defect; the order workflow was usable. Native Medusa's HTTP 409 in-progress branch was not observed; the accepted tests cover supported concurrent requests and application busy/retry behavior. Redis crash durability was not tested. With JavaScript disabled, a server-rejected edit still reports the field error and requires re-review but discards unsaved field values. Sanitized diagnostics deliberately omit dynamic framework detail. Sol reviewed these limits and deemed them nonblocking for M1. Real payment, actual shipping, supplier workflows, production deployment and infrastructure changes are outside this packet.
+
+## Sol acceptance · November 28
+
+Sol reviewed Terra's exact submission `cc9be247bf8bf08e41717a82259e470ee37caf44` against the released M1 handoff and accepted the direct demo on merge of [PR #15](https://github.com/XVDev21/merqloom-dev/pull/15). The application diff updates only Studio and roadmap copy. It preserves the simulated disclosures, and supplier processing remains planned. Sol independently exercised Studio and the roadmap at 390 and 1280 px in Playwright, followed the Store link, and checked reflow and reduced motion. Sol reviewed the PHP 460 confirmation and shipped fulfillment captures. A read-only query on the disposable database confirmed one order, one cart link, one shipped fulfillment, one label, and 11 stocked / 0 reserved / 11 available. The negative-stock and duplicate-action checks preserved that state.
+
+Foundation push and PR and Compose push and PR passed on Terra's exact submission, with 17 integration tests passing in the Foundation PR log. Sol's acceptance update changes only Markdown; the required checks for the final branch revision are recorded on the [PR checks page](https://github.com/XVDev21/merqloom-dev/pull/15/checks). No further M1 correction is required. MQ-201 remains the next planned task and requires its own release.

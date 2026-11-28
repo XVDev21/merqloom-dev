@@ -73,3 +73,7 @@ Sol releases [the M1 acceptance preparation](../handoffs/TERRA_MQ-105_M1_ACCEPTA
 ## MQ-105 · M1 evidence review
 
 November 27, Manila. Terra traced one fictional direct-stock order from Studio and Store through simulated checkout, native Admin fulfillment and simulated shipment on a disposable stack. [M1 evidence](../verification/M1_ACCEPTANCE.md) records the matching totals, stock transitions, replay checks, scoped public-copy correction and remaining limits. Status: IN_REVIEW. Sol owns the independent review, M1 decision and merge; supplier work remains a separate release.
+
+## MQ-105 · M1 acceptance · November 28
+
+Sol accepts MQ-105 and closes the M1 gate on merge of [PR #15](https://github.com/XVDev21/merqloom-dev/pull/15). The [acceptance record](../verification/M1_ACCEPTANCE.md#sol-acceptance--november-28) records the independent review, the simulated PHP 460 order, direct-stock fulfillment, inventory and retry evidence, and the limits carried forward. MQ-201, supplier schema and adapter, is the next planned task and awaits its own handoff.
